@@ -1,0 +1,61 @@
+<!--
+title: Secure Billing & Investment Portal | Craftsflow
+description: Secure checkout portal for custom digital growth investments. Pay online via secure credit card.
+breadcrumbs: Home > Investment > Checkout
+-->
+<section class="inner-page-hero">
+  <div class="container">
+    <h1>Secure Client Investment Portal</h1>
+    <p class="inner-page-intro">Complete your transaction quickly and securely. Please enter the custom investment amount and invoice details provided by your Craftsflow account director.</p>
+  </div>
+</section>
+
+<section class="section section-bg-accent">
+  <div class="container">
+    <div class="invest-container reveal">
+      <div class="invest-card">
+        <div class="stripe-brand-strip">
+          <div class="stripe-brand-text">SECURE CARD CHECKOUT</div>
+          <div class="stripe-lock-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right: 2px;">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0110 0v4"/>
+            </svg>
+            SSL SECURED
+          </div>
+        </div>
+        
+        <form class="contact-form" action="https://buy.stripe.com/fZuaEY3hXgXRgs8bNB9R60j" method="GET" target="_blank">
+          <div class="form-group" style="text-align: center; margin-bottom: 24px;">
+            <label for="amount" style="font-size: 13px; font-weight: 700; text-transform: uppercase; color: var(--text-light); letter-spacing: 0.05em; display: block; margin-bottom: 8px;">Enter Investment Amount ($USD)</label>
+            <input type="number" id="amount" class="stripe-input-amount" placeholder="0.00" min="1" step="any">
+            <span style="font-size: 12px; color: var(--text-light); display: block; margin-top: 6px;">Note: Enter custom amount as agreed with your account manager.</span>
+          </div>
+          
+          <div class="form-group">
+            <label for="invoice-code">Invoice / Client Code</label>
+            <input type="text" id="invoice-code" required placeholder="e.g., CF-2026-893">
+          </div>
+          
+          <div class="form-group">
+            <label for="client-name">Company / Agent Name</label>
+            <input type="text" id="client-name" required placeholder="e.g., Sarah Jenkins Real Estate">
+          </div>
+          
+          <div class="form-group">
+            <label for="client-email">Receipt Email Address</label>
+            <input type="email" id="client-email" required placeholder="receipts@example.com">
+          </div>
+          
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 24px; justify-content: center; font-size: 16px; padding: 16px;">
+            Proceed to Secure Stripe Checkout →
+          </button>
+        </form>
+        
+        <div style="text-align: center; margin-top: 24px; font-size: 12px; color: var(--text-light);">
+          Payments processed securely via Stripe. We do not store your financial records.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

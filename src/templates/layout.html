@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}">
+  
+  <!-- Canonical SEO Tag -->
+  <link rel="canonical" href="{{canonical}}">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="{{rootPrefix}}css/style.css">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="{{title}}">
+  <meta property="og:description" content="{{description}}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{canonical}}">
+  <meta property="og:site_name" content="Craftsflow">
+  
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{title}}">
+  <meta name="twitter:description" content="{{description}}">
+
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Craftsflow",
+      "url": "https://craftsflow.com/",
+      "logo": "https://craftsflow.com/images/logo.png",
+      "sameAs": [
+        "https://linkedin.com",
+        "https://instagram.com",
+        "https://facebook.com",
+        "https://twitter.com"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-470-206-3834",
+        "contactType": "customer service"
+      },
+      "priceRange": "$$",
+      "description": "We grow real estate brands, builders, and businesses with exclusive leads, AI systems, world-class websites, and social media that actually converts."
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Sticky Global Navigation Header -->
+  {{header}}
+
+  <!-- Clickable Relative Breadcrumbs (Visible on inner pages) -->
+  {{breadcrumbs}}
+
+  <!-- Main Body Content Slot -->
+  <main>
+    {{body}}
+  </main>
+
+  <!-- Global Footer -->
+  {{footer}}
+
+  <!-- Scroll-to-Top Button -->
+  <button class="back-to-top" aria-label="Back to Top">
+    <svg fill="currentColor" viewBox="0 0 24 24" width="20" height="20">
+      <path d="M12 4l-8 8h6v8h4v-8h6z"/>
+    </svg>
+  </button>
+
+  <!-- Core JavaScript Interactivity -->
+  <script src="{{rootPrefix}}js/main.js"></script>
+
+</body>
+</html>

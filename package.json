@@ -1,0 +1,13 @@
+{
+  "name": "craftsflow",
+  "version": "1.0.0",
+  "description": "Premium Digital Growth Agency Website",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js && npx live-server --port=3000 --watch=.,css,js"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
