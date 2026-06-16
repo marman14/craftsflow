@@ -479,6 +479,114 @@ header.site-header.scrolled .mega-menu {
   transition: all 0.3s ease;
 }
 
+.mobile-nav-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-nav-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.header-book-btn {
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .mobile-nav-toggle {
+    display: block;
+    z-index: 1001;
+  }
+  
+  .main-nav {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--navy-primary);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    padding: 40px;
+    overflow-y: auto;
+  }
+
+  header.site-header.scrolled .main-nav {
+    top: 64px;
+  }
+
+  .main-nav.active {
+    display: flex;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 24px;
+  }
+
+  .nav-item {
+    height: auto;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .nav-link {
+    font-size: 18px;
+    padding: 12px 0;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-link.active::after {
+    left: 25%;
+    right: 25%;
+  }
+
+  .mega-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    pointer-events: auto;
+    max-height: 0;
+    overflow: hidden;
+    width: 100%;
+    transition: max-height 0.3s ease;
+    background-color: var(--navy-light);
+    border-bottom: none;
+  }
+
+  .nav-item:hover .mega-menu {
+    max-height: 1000px;
+  }
+
+  .mega-menu-grid {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .mega-cta-col {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-book-btn {
+    display: none !important;
+  }
+}
+
 /* Breadcrumbs */
 .breadcrumbs {
   background-color: var(--navy-light);
@@ -1960,6 +2068,26 @@ footer.site-footer {
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
   border-color: var(--accent-gold);
   box-shadow: 0 0 0 3px rgba(223, 186, 115, 0.2);
+}
+
+/* Cal.com Scheduling Booking Container */
+.booking-container {
+  position: relative;
+  background-color: var(--navy-light);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-card);
+  padding: 24px;
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+  height: 700px;
+  margin-top: 48px;
+}
+
+@media (max-width: 768px) {
+  .booking-container {
+    height: 800px; /* Give more vertical scrolling space for calendar slots on smaller mobile screens */
+    padding: 12px;
+  }
 }
 
 /* Custom Billing / Invest Form styles */
