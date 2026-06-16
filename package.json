@@ -5,7 +5,7 @@
   "main": "build.js",
   "scripts": {
     "build": "node build.js",
-    "dev": "node build.js && npx live-server --port=3000 --watch=.,css,js"
+    "dev": "node build.js && npx live-server public --port=3000 --watch=public"
   },
   "devDependencies": {
     "live-server": "^1.2.2"

@@ -4,7 +4,7 @@ const path = require('path');
 const SRC_DIR = path.join(__dirname, 'src');
 const PAGES_DIR = path.join(SRC_DIR, 'pages');
 const TEMPLATES_DIR = path.join(SRC_DIR, 'templates');
-const OUTPUT_DIR = __dirname;
+const OUTPUT_DIR = path.join(__dirname, 'public');
 
 // Read template files
 let layoutTemplate, headerTemplate, footerTemplate;
@@ -216,7 +216,40 @@ function build() {
     console.log(`Generated: ${path.relative(OUTPUT_DIR, destPath)}`);
   });
   
+  // Copy static assets to public/
+  try {
+    const cssSrc = path.join(__dirname, 'css');
+    const cssDest = path.join(OUTPUT_DIR, 'css');
+    if (fs.existsSync(cssSrc)) {
+      copyDirRecursive(cssSrc, cssDest);
+    }
+    const jsSrc = path.join(__dirname, 'js');
+    const jsDest = path.join(OUTPUT_DIR, 'js');
+    if (fs.existsSync(jsSrc)) {
+      copyDirRecursive(jsSrc, jsDest);
+    }
+    console.log('Copied static assets to public/');
+  } catch (err) {
+    console.error('Error copying static assets:', err);
+  }
+
   console.log('Build complete!');
+}
+
+function copyDirRecursive(src, dest) {
+  if (!fs.existsSync(dest)) {
+    fs.mkdirSync(dest, { recursive: true });
+  }
+  const entries = fs.readdirSync(src, { withFileTypes: true });
+  for (let entry of entries) {
+    const srcPath = path.join(src, entry.name);
+    const destPath = path.join(dest, entry.name);
+    if (entry.isDirectory()) {
+      copyDirRecursive(srcPath, destPath);
+    } else {
+      fs.copyFileSync(srcPath, destPath);
+    }
+  }
 }
 
 if (require.main === module) {
