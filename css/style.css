@@ -1495,6 +1495,19 @@ header.site-header.scrolled ~ .breadcrumbs {
   }
 }
 
+.pricing-grid.two-cols {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .pricing-grid.two-cols {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+  }
+}
+
 .pricing-card {
   background: var(--navy-light);
   backdrop-filter: blur(12px);

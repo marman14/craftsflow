@@ -17,6 +17,7 @@ const expectedPages = [
   'services/paid-ads/index.html',
   'services/email-marketing/index.html',
   'services/content-marketing/index.html',
+  'services/virtual-assistant/index.html',
   'services/exclusive-leads/index.html',
   'services/appointment-setting/index.html',
   'services/crm-automation/index.html',
@@ -134,6 +135,6 @@ if (failed) {
   console.log('Status: FAILED. Please review the errors listed above.');
   process.exit(1);
 } else {
-  console.log('Status: PASSED. All 41 pages successfully compiled and checked!');
+  console.log(`Status: PASSED. All ${expectedPages.length} pages successfully compiled and checked!`);
   process.exit(0);
 }
