@@ -1,31 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap');
 
 :root {
-  --navy-primary: #03050C; /* Cosmic Obsidian Void */
-  --navy-light: #080B14; /* Sleek Glass Card Base */
-  --navy-dark: #010206; /* Pitch Black Void */
-  --navy-accent: #0D111E; /* Midnight slate overlay */
-  --slate-dark: #F8FAFC; /* Crisp Alabaster White for headings */
-  --text-main: #E2E8F0; /* High-contrast Silver Cream body */
-  --text-light: #94A3B8; /* Muted Slate */
-  --border-color: rgba(223, 186, 115, 0.08); /* Translucent Gold border */
-  --border-color-light: rgba(255, 255, 255, 0.04); /* Translucent light white border */
-  --white: #FFFFFF;
-  --accent-gold: #DFBA73; /* Champagne Gold */
-  --accent-gold-hover: #EED194;
-  --accent-indigo: #6366F1; /* Electric Indigo growth accent */
-  --accent-indigo-hover: #818CF8;
-  --glow-color: rgba(223, 186, 115, 0.15);
-  --glow-gold: rgba(223, 186, 115, 0.18);
-  --glow-indigo: rgba(99, 102, 241, 0.25);
+  --navy-primary: #F8FAFC; /* Primary soft slate background */
+  --navy-light: rgba(255, 255, 255, 0.85); /* Semi-translucent white glass base for cards */
+  --navy-dark: #FFFFFF; /* Pure white background for sections */
+  --navy-accent: #F1F5F9; /* Clean slate gray for menus & boxes */
+  --slate-dark: #0F172A; /* Slate Charcoal for headings */
+  --text-main: #475569; /* Slate Blue for body text */
+  --text-light: #64748B; /* Muted Slate */
+  --border-color: rgba(15, 23, 42, 0.08); /* Soft slate border */
+  --border-color-light: rgba(15, 23, 42, 0.04); /* Soft light slate border */
+  --white: #0F172A; /* Replaced with Slate Charcoal for high contrast text elements */
+  --real-white: #FFFFFF; /* Actual white for background components */
+  --accent-gold: #B38F46; /* Rich warm champagne gold */
+  --accent-gold-hover: #967433;
+  --accent-indigo: #4F46E5; /* Deep electric indigo */
+  --accent-indigo-hover: #3730A3;
+  --glow-color: rgba(179, 143, 70, 0.05);
+  --glow-gold: rgba(179, 143, 70, 0.06);
+  --glow-indigo: rgba(79, 70, 229, 0.05);
   
   --font-headings: 'Plus Jakarta Sans', 'Inter', sans-serif;
   --font-body: 'Inter', sans-serif;
   
-  --shadow-sm: 0 4px 12px rgba(0,0,0,0.15);
-  --shadow-md: 0 12px 36px rgba(0,0,0,0.3);
-  --shadow-lg: 0 20px 48px rgba(223, 186, 115, 0.06);
-  --shadow-xl: 0 32px 64px rgba(0,0,0,0.5);
+  --shadow-sm: 0 4px 12px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 12px 36px rgba(15, 23, 42, 0.06);
+  --shadow-lg: 0 20px 48px rgba(179, 143, 70, 0.02);
+  --shadow-xl: 0 32px 64px rgba(15, 23, 42, 0.12);
   
   --radius-card: 16px;
   --radius-btn: 8px;
@@ -130,7 +131,7 @@ img {
 }
 
 .section-bg-dark p {
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--text-main);
 }
 
 .section-header {
@@ -202,12 +203,12 @@ img {
 
 .btn-ghost {
   background-color: transparent;
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(15, 23, 42, 0.15);
   color: var(--white);
 }
 
 .btn-ghost:hover {
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(15, 23, 42, 0.05);
   border-color: var(--white);
   transform: translateY(-2px);
 }
@@ -219,7 +220,7 @@ header.site-header {
   left: 0;
   right: 0;
   height: 72px;
-  background-color: rgba(3, 5, 12, 0.75);
+  background-color: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-color);
@@ -228,7 +229,7 @@ header.site-header {
 }
 
 header.site-header.scrolled {
-  background-color: rgba(1, 2, 6, 0.85);
+  background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   box-shadow: var(--shadow-sm);
@@ -379,7 +380,7 @@ header.site-header.scrolled .mega-menu {
 
 .mega-list a {
   font-size: 14px;
-  color: #94A3B8;
+  color: var(--text-light);
   font-weight: 500;
   display: block;
 }
@@ -1346,7 +1347,7 @@ header.site-header.scrolled ~ .breadcrumbs {
 .stat-lbl {
   font-size: clamp(13px, 1.5vw, 15px);
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--text-main);
 }
 
 /* Case Studies Preview */
@@ -1639,7 +1640,7 @@ header.site-header.scrolled ~ .breadcrumbs {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 1px);
   background-size: 24px 24px;
   opacity: 0.6;
 }
