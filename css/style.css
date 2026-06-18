@@ -287,7 +287,7 @@ header.site-header.scrolled {
   font-family: var(--font-body);
   font-size: 14px;
   font-weight: 600;
-  color: #CBD5E1; /* Slate 300 */
+  color: var(--text-main); /* Slate Blue */
   padding: 0 16px;
   height: 100%;
   display: flex;
@@ -328,7 +328,7 @@ header.site-header.scrolled {
   top: 72px;
   left: 0;
   right: 0;
-  background-color: var(--navy-light);
+  background-color: var(--navy-dark); /* Solid white */
   box-shadow: var(--shadow-xl);
   border-bottom: 1px solid var(--border-color);
   opacity: 0;
@@ -454,7 +454,7 @@ header.site-header.scrolled .mega-menu {
 .mega-bottom-link {
   font-size: 14px;
   font-weight: 600;
-  color: #CBD5E1;
+  color: var(--text-light);
 }
 
 .mega-bottom-link:hover {
@@ -989,7 +989,7 @@ header.site-header.scrolled ~ .breadcrumbs {
 }
 
 .service-card {
-  background: rgba(8, 11, 20, 0.75);
+  background: var(--navy-light);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border-color);
@@ -1005,7 +1005,7 @@ header.site-header.scrolled ~ .breadcrumbs {
 
 .service-card:hover {
   transform: translateY(-6px) scale(1.015);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(99, 102, 241, 0.12);
+  box-shadow: var(--shadow-md);
   border-color: var(--accent-gold);
 }
 
@@ -1087,7 +1087,7 @@ header.site-header.scrolled ~ .breadcrumbs {
 }
 
 .industry-card {
-  background: rgba(8, 11, 20, 0.75);
+  background: var(--navy-light);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border-color);
@@ -1101,7 +1101,7 @@ header.site-header.scrolled ~ .breadcrumbs {
 
 .industry-card:hover {
   transform: translateY(-6px) scale(1.015);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(223, 186, 115, 0.12);
+  box-shadow: var(--shadow-md);
   border-color: var(--accent-gold);
 }
 
@@ -1370,7 +1370,7 @@ header.site-header.scrolled ~ .breadcrumbs {
 }
 
 .case-card {
-  background: rgba(8, 11, 20, 0.75);
+  background: var(--navy-light);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border-color);
@@ -1384,7 +1384,7 @@ header.site-header.scrolled ~ .breadcrumbs {
 
 .case-card:hover {
   transform: translateY(-6px) scale(1.015);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(99, 102, 241, 0.12);
+  box-shadow: var(--shadow-md);
   border-color: var(--accent-gold);
 }
 
@@ -1444,7 +1444,7 @@ header.site-header.scrolled ~ .breadcrumbs {
 }
 
 .testimonial-card {
-  background: rgba(8, 11, 20, 0.75);
+  background: var(--navy-light);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border-color);
@@ -1496,7 +1496,7 @@ header.site-header.scrolled ~ .breadcrumbs {
 }
 
 .pricing-card {
-  background: rgba(8, 11, 20, 0.75);
+  background: var(--navy-light);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border-color);
@@ -1511,18 +1511,19 @@ header.site-header.scrolled ~ .breadcrumbs {
 
 .pricing-card:hover {
   transform: translateY(-6px) scale(1.015);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(223, 186, 115, 0.12);
+  box-shadow: var(--shadow-md);
   border-color: var(--accent-gold);
 }
 
 .pricing-card.featured {
   border: 3px solid var(--accent-gold);
   box-shadow: var(--shadow-lg);
+  background: var(--navy-dark);
 }
 
 .pricing-card.featured:hover {
   transform: translateY(-6px) scale(1.015);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(99, 102, 241, 0.15);
+  box-shadow: var(--shadow-xl);
   border-color: var(--accent-gold);
 }
 
@@ -1595,7 +1596,7 @@ header.site-header.scrolled ~ .breadcrumbs {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  color: #CBD5E1;
+  color: var(--text-main);
 }
 
 .plan-feature-item::before {
@@ -1880,7 +1881,7 @@ footer.site-footer {
 }
 
 .inner-list-text {
-  color: #CBD5E1;
+  color: var(--text-main);
 }
 
 .inner-list-text strong {
@@ -2276,7 +2277,7 @@ footer.site-footer {
   font-family: var(--font-body);
   font-size: 14px;
   font-weight: 600;
-  color: #CBD5E1;
+  color: var(--text-main);
   padding: 10px 20px;
   border-radius: 50px;
   cursor: pointer;
