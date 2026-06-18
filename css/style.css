@@ -254,7 +254,7 @@ header.site-header.scrolled {
   letter-spacing: -0.01em;
 }
 
-.logo span {
+.logo .logo-accent {
   color: var(--accent-gold);
 }
 
