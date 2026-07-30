@@ -29,9 +29,9 @@ const expectedPages = [
   'services/local-seo-social/index.html',
   'services/virtual-tours/index.html',
   'services/referral-network/index.html',
-  'industries/realtors/index.html',
+  'industries/health-wellness/index.html',
   'industries/builders/index.html',
-  'industries/brokerages/index.html',
+  'industries/home-services/index.html',
   'industries/local-business/index.html',
   'how-it-works/index.html',
   'pricing/index.html',
@@ -109,8 +109,11 @@ expectedPages.forEach(pagePath => {
       continue;
     }
 
-    // Resolve relative path
-    const resolvedPath = path.resolve(pageDir, link);
+    // Resolve relative path (strip anchor fragment if present)
+    const cleanLink = link.split('#')[0];
+    if (!cleanLink) continue; // Pure anchor link like #fork-section
+
+    const resolvedPath = path.resolve(pageDir, cleanLink);
     
     // Check if path exists
     if (!fs.existsSync(resolvedPath)) {

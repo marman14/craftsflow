@@ -1,0 +1,112 @@
+<!--
+title: Craftsflow Interactive Revenue & ROI Calculator
+description: Calculate how much money your business is losing to missed calls or calculate your projected return on ad spend with our interactive tool.
+breadcrumbs: Home > Revenue Calculator
+-->
+<section class="funnel-hero" style="padding-bottom: 60px;">
+  <div class="container" style="text-align: center; max-width: 900px;">
+    <h1 class="hero-h1" style="font-size: clamp(32px, 4vw, 48px); margin-bottom: 16px;">
+      Interactive Revenue Leak &amp; Growth Calculator
+    </h1>
+    <p class="hero-subhead" style="margin: 0 auto; color: #CBD5E1;">
+      Select your category below to calculate your exact financial leaks or projected marketing returns.
+    </p>
+  </div>
+</section>
+
+<section class="calc-section" style="padding-top: 20px;">
+  <div class="container">
+    <div class="calc-tabs">
+      <button class="calc-tab-btn active" id="tab-calc-leak" onclick="switchCalcTab('leak')">
+        Card A: Revenue Leak Calculator 🩸
+      </button>
+      <button class="calc-tab-btn" id="tab-calc-growth" onclick="switchCalcTab('growth')">
+        Card B: New Lead Pipeline ROI 🚀
+      </button>
+    </div>
+
+    <div class="calc-box">
+      <!-- LEAK CALCULATOR -->
+      <div id="calc-leak-wrapper">
+        <div class="calc-grid">
+          <div>
+            <div class="calc-slider-group">
+              <div class="calc-slider-header">
+                <span>Missed Calls Per Week</span>
+                <span class="calc-slider-val" id="leak-calls-val">12</span>
+              </div>
+              <input type="range" class="calc-slider" id="leak-calls" min="2" max="40" value="12" oninput="updateLeakCalc()">
+            </div>
+
+            <div class="calc-slider-group">
+              <div class="calc-slider-header">
+                <span>Average Job / Customer Value ($)</span>
+                <span class="calc-slider-val" id="leak-value-val">$1,500</span>
+              </div>
+              <input type="range" class="calc-slider" id="leak-value" min="200" max="10000" step="100" value="1500" oninput="updateLeakCalc()">
+            </div>
+
+            <div class="calc-slider-group">
+              <div class="calc-slider-header">
+                <span>Estimated Booking Rate if Answered</span>
+                <span class="calc-slider-val" id="leak-rate-val">30%</span>
+              </div>
+              <input type="range" class="calc-slider" id="leak-rate" min="10" max="70" step="5" value="30" oninput="updateLeakCalc()">
+            </div>
+          </div>
+
+          <div class="calc-result-box">
+            <div class="calc-result-label">Estimated Revenue Bleeding</div>
+            <div class="calc-result-number" id="leak-result-monthly">$21,600</div>
+            <div class="calc-result-sub">lost every single month</div>
+            <div style="font-size: 13px; color: #94A3B8; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 12px;" id="leak-result-annual">
+              Annual Loss: <strong>$259,200 / year</strong>
+            </div>
+            <a href="https://cal.com/ar-webcrafts/craftsflow" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="margin-top: 20px; width: 100%;">Stop The Leak Now →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- GROWTH CALCULATOR -->
+      <div id="calc-growth-wrapper" style="display: none;">
+        <div class="calc-grid">
+          <div>
+            <div class="calc-slider-group">
+              <div class="calc-slider-header">
+                <span>Monthly Ad Spend Budget ($)</span>
+                <span class="calc-slider-val" id="growth-spend-val">$1,500</span>
+              </div>
+              <input type="range" class="calc-slider" id="growth-spend" min="500" max="10000" step="250" value="1500" oninput="updateGrowthCalc()">
+            </div>
+
+            <div class="calc-slider-group">
+              <div class="calc-slider-header">
+                <span>Estimated Cost Per Lead in Your Industry ($)</span>
+                <span class="calc-slider-val" id="growth-cpl-val">$40</span>
+              </div>
+              <input type="range" class="calc-slider" id="growth-cpl" min="15" max="120" step="5" value="40" oninput="updateGrowthCalc()">
+            </div>
+
+            <div class="calc-slider-group">
+              <div class="calc-slider-header">
+                <span>Average Customer Value ($)</span>
+                <span class="calc-slider-val" id="growth-val-val">$2,500</span>
+              </div>
+              <input type="range" class="calc-slider" id="growth-val" min="300" max="15000" step="100" value="2500" oninput="updateGrowthCalc()">
+            </div>
+          </div>
+
+          <div class="calc-result-box" style="border-color: #10B981;">
+            <div class="calc-result-label">Projected Monthly Revenue</div>
+            <div class="calc-result-number gain-mode" id="growth-result-monthly">$23,437</div>
+            <div class="calc-result-sub" id="growth-result-leads">from ~37 new leads booked</div>
+            <div style="font-size: 13px; color: #94A3B8; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 12px;" id="growth-result-roi">
+              Projected ROI: <strong>15.6x Return</strong>
+            </div>
+            <a href="https://cal.com/ar-webcrafts/craftsflow" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="margin-top: 20px; width: 100%; background: #10B981; border-color: #10B981;">Build My Pipeline →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

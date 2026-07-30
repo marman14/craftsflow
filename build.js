@@ -60,37 +60,7 @@ function parseMetadata(content) {
 }
 
 function generateBreadcrumbsHTML(breadcrumbsStr, rootPrefix) {
-  if (!breadcrumbsStr) return '';
-  const parts = breadcrumbsStr.split('>').map(p => p.trim());
-  let html = `<nav class="breadcrumbs" aria-label="Breadcrumb"><div class="breadcrumbs-container">`;
-  
-  parts.forEach((part, index) => {
-    if (index > 0) {
-      html += ` <span class="breadcrumb-separator" aria-hidden="true">/</span> `;
-    }
-    
-    if (index === parts.length - 1) {
-      html += `<span class="breadcrumb-current" aria-current="page">${part}</span>`;
-    } else {
-      let href = '';
-      if (part.toLowerCase() === 'home') {
-        href = rootPrefix + 'index.html';
-      } else if (part.toLowerCase() === 'services') {
-        href = rootPrefix + 'services/index.html';
-      } else if (part.toLowerCase() === 'investment') {
-        href = rootPrefix + 'pricing/index.html';
-      } else if (part.toLowerCase() === 'industries') {
-        href = '#'; // Non-clickable parent link
-      } else {
-        // Fallback guess based on name
-        href = rootPrefix + `${part.toLowerCase().replace(/\s+/g, '-')}/index.html`;
-      }
-      html += `<a href="${href}" class="breadcrumb-link">${part}</a>`;
-    }
-  });
-  
-  html += `</div></nav>`;
-  return html;
+  return '<div style="margin-top: 92px;"></div>';
 }
 
 function build() {
