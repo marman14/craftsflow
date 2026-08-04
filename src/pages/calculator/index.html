@@ -8,17 +8,17 @@ breadcrumbs: Home > Calculator
     max-width: 1040px;
     margin: 0 auto;
     padding: 0 16px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: var(--font-body), -apple-system, BlinkMacSystemFont, sans-serif;
   }
   
   .calc-card-outer {
-    background: #FAFAFA;
-    border: 1px solid #E5E7EB;
-    border-radius: 16px;
+    background: var(--steel);
+    border: 1px solid var(--line-2);
+    border-radius: var(--radius-card);
     padding: 32px;
     margin-bottom: 32px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-    color: #111827;
+    box-shadow: var(--shadow-md);
+    color: var(--paper);
   }
 
   .calc-header-title {
@@ -26,59 +26,69 @@ breadcrumbs: Home > Calculator
     align-items: center;
     gap: 12px;
     font-size: 20px;
-    font-weight: 700;
-    color: #0F172A;
+    font-weight: 800;
+    font-family: var(--font-headings);
+    color: var(--white);
     margin-bottom: 24px;
+    letter-spacing: -0.01em;
   }
 
   .calc-icon-badge {
-    width: 32px;
-    height: 32px;
-    background: #0F172A;
-    border-radius: 8px;
+    width: 36px;
+    height: 36px;
+    background: var(--navy-dark);
+    border: 1px solid var(--line-2);
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #FFFFFF;
+    color: var(--accent-gold);
     flex-shrink: 0;
   }
 
   /* Service Mode Selector */
   .service-mode-tabs {
     display: flex;
-    background: #EAECEE;
-    border-radius: 10px;
+    background: var(--navy-dark);
+    border: 1px solid var(--line);
+    border-radius: 12px;
     padding: 4px;
-    margin-bottom: 24px;
-    gap: 4px;
+    margin-bottom: 32px;
+    gap: 6px;
   }
 
   .mode-tab-btn {
     flex: 1;
     border: none;
     background: transparent;
-    padding: 10px 16px;
-    font-size: 13px;
+    padding: 12px 18px;
+    font-size: 14px;
     font-weight: 700;
-    color: #4B5563;
-    border-radius: 7px;
+    color: var(--muted);
+    border-radius: 8px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.25s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+    gap: 8px;
+    font-family: var(--font-body);
+  }
+
+  .mode-tab-btn:hover {
+    color: var(--paper);
   }
 
   .mode-tab-btn.active {
-    background: #FFFFFF;
-    color: #0F172A;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    background: var(--accent-gold);
+    color: var(--navy-dark);
+    font-weight: 800;
+    box-shadow: 0 4px 12px var(--accent-gold-glow);
   }
 
   .calc-grid-layout {
     display: grid;
-    grid-template-columns: 1fr 1.35fr;
+    grid-template-columns: 1fr 1.3fr;
     gap: 40px;
   }
 
@@ -89,98 +99,45 @@ breadcrumbs: Home > Calculator
     }
   }
 
-  /* Inputs column */
+  /* Inputs Column */
   .calc-form-group {
-    margin-bottom: 18px;
+    margin-bottom: 28px;
   }
 
   .calc-form-label-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 6px;
+    margin-bottom: 12px;
   }
 
   .calc-form-label {
-    font-size: 12px;
-    font-weight: 600;
-    color: #4B5563;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--paper);
   }
 
   .calc-range-val {
-    font-size: 13px;
-    font-weight: 700;
-    color: #0F172A;
-  }
-
-  .calc-input-field {
-    width: 100%;
-    background: #F9FAFB;
-    border: 1px solid #E5E7EB;
-    border-radius: 8px;
-    padding: 10px 14px;
     font-size: 14px;
-    font-weight: 600;
-    color: #111827;
-    outline: none;
-    transition: all 0.2s ease;
-    box-sizing: border-box;
+    font-weight: 800;
+    color: var(--navy-dark);
+    background: var(--accent-gold);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-family: var(--font-mono);
   }
 
-  .calc-input-field:focus {
-    border-color: #0F172A;
-    background: #FFFFFF;
-    box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.08);
-  }
-
+  /* Clean Slider Styling */
   .calc-slider {
     width: 100%;
-    height: 6px;
-    border-radius: 3px;
-    background: #E2E8F0;
-    accent-color: #0F172A;
+    height: 8px;
+    border-radius: 4px;
+    background: var(--navy-dark);
+    border: 1px solid var(--line);
+    accent-color: var(--accent-gold);
     cursor: pointer;
-    margin-top: 6px;
-  }
-
-  /* Service Addon Checkboxes */
-  .addon-options-box {
-    background: #F1F5F9;
-    border: 1px solid #E2E8F0;
-    border-radius: 10px;
-    padding: 14px 16px;
-    margin-top: 20px;
-  }
-
-  .addon-box-title {
-    font-size: 12px;
-    font-weight: 700;
-    color: #0F172A;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-  }
-
-  .addon-check-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 13px;
-    font-weight: 600;
-    color: #334155;
-    margin-bottom: 8px;
-    cursor: pointer;
-  }
-
-  .addon-check-item:last-child {
-    margin-bottom: 0;
-  }
-
-  .addon-check-item input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-    accent-color: #0F172A;
-    cursor: pointer;
+    outline: none;
+    margin-top: 4px;
   }
 
   /* Results Grid */
@@ -191,44 +148,59 @@ breadcrumbs: Home > Calculator
   }
 
   .calc-metric-box {
-    background: #EAECEE;
-    border: 1px solid #D1D5DB;
+    background: var(--navy-dark);
+    border: 1px solid var(--line-2);
     border-radius: 12px;
     padding: 20px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+
+  .calc-metric-box:hover {
+    border-color: rgba(255, 199, 44, 0.4);
+    transform: translateY(-2px);
   }
 
   .calc-metric-box.full-width {
     grid-column: span 2;
+    background: linear-gradient(135deg, var(--navy-dark), var(--steel));
+    border-color: rgba(255, 199, 44, 0.3);
   }
 
   .calc-metric-lbl {
     font-size: 11px;
     font-weight: 700;
-    color: #4B5563;
-    text-transform: capitalize;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
     margin-bottom: 8px;
   }
 
   .calc-metric-val {
     font-size: 32px;
     font-weight: 800;
-    color: #0F172A;
+    color: var(--white);
     line-height: 1.1;
     letter-spacing: -0.02em;
+    font-family: var(--font-headings);
+  }
+
+  .calc-metric-val.highlight {
+    color: var(--accent-gold);
   }
 
   /* Forecast Chart Section */
   .forecast-subtitle {
     font-size: 14px;
-    color: #6B7280;
+    color: var(--paper-dim);
     margin-top: -12px;
     margin-bottom: 24px;
+    line-height: 1.6;
   }
 
   .chart-wrapper-box {
-    background: #FFFFFF;
-    border: 1px solid #E5E7EB;
-    border-radius: 12px;
+    background: var(--navy-dark);
+    border: 1px solid var(--line-2);
+    border-radius: 14px;
     padding: 24px 20px 16px 20px;
     margin-bottom: 24px;
     position: relative;
@@ -240,20 +212,21 @@ breadcrumbs: Home > Calculator
     cursor: crosshair;
   }
 
-  /* Interactive Hover Tooltip Box matching input_file_0.png */
+  /* Interactive Hover Tooltip Card matching Craftsflow dark theme */
   .chart-tooltip-card {
     position: absolute;
-    background: #FFFFFF;
-    border: 1px solid #E2E8F0;
-    border-radius: 10px;
-    padding: 12px 16px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    background: rgba(14, 21, 29, 0.95);
+    border: 1.5px solid var(--accent-gold);
+    border-radius: 12px;
+    padding: 12px 18px;
+    box-shadow: var(--shadow-md);
+    backdrop-filter: blur(8px);
     pointer-events: none;
     opacity: 0;
-    transform: translate(-50%, -100%);
+    transform: translate(-50%, -115%);
     transition: opacity 0.15s ease, transform 0.15s ease;
     z-index: 10;
-    min-width: 180px;
+    min-width: 200px;
   }
 
   .chart-tooltip-card.visible {
@@ -262,9 +235,12 @@ breadcrumbs: Home > Calculator
 
   .tooltip-month-title {
     font-size: 14px;
-    font-weight: 700;
-    color: #0F172A;
+    font-weight: 800;
+    color: var(--accent-gold);
     margin-bottom: 8px;
+    font-family: var(--font-headings);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 4px;
   }
 
   .tooltip-line {
@@ -276,11 +252,11 @@ breadcrumbs: Home > Calculator
   }
 
   .tooltip-line.curr {
-    color: #94A3B8;
+    color: var(--muted);
   }
 
   .tooltip-line.impr {
-    color: #0F172A;
+    color: var(--white);
     font-weight: 700;
   }
 
@@ -288,11 +264,11 @@ breadcrumbs: Home > Calculator
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 24px;
+    gap: 28px;
     margin-top: 16px;
     font-size: 13px;
     font-weight: 600;
-    color: #4B5563;
+    color: var(--paper-dim);
   }
 
   .legend-dot {
@@ -300,28 +276,29 @@ breadcrumbs: Home > Calculator
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    margin-right: 6px;
+    margin-right: 8px;
   }
 
   /* Bottom Callout Box */
   .gap-callout-box {
-    background: #EAECEE;
-    border: 1px solid #D1D5DB;
+    background: var(--navy-dark);
+    border: 1px solid rgba(255, 199, 44, 0.3);
     border-radius: 12px;
     padding: 20px 24px;
   }
 
   .gap-callout-title {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 800;
-    color: #0F172A;
-    margin-bottom: 4px;
+    color: var(--accent-gold);
+    margin-bottom: 6px;
+    font-family: var(--font-headings);
   }
 
   .gap-callout-desc {
     font-size: 14px;
-    color: #4B5563;
-    line-height: 1.5;
+    color: var(--paper-dim);
+    line-height: 1.6;
   }
 
   .calc-cta-strip {
@@ -332,25 +309,25 @@ breadcrumbs: Home > Calculator
 
 <section class="funnel-hero" style="padding-bottom: 40px;">
   <div class="container" style="text-align: center; max-width: 900px;">
-    <h1 class="hero-h1" style="font-size: clamp(32px, 4vw, 48px); margin-bottom: 16px;">
-      Interactive Revenue &amp; Growth Forecast
+    <h1 class="hero-h1" style="font-size: clamp(32px, 4vw, 48px); margin-bottom: 16px; color: var(--white);">
+      Interactive Revenue &amp; Growth Calculator
     </h1>
-    <p class="hero-subhead" style="margin: 0 auto; color: #CBD5E1;">
-      Calculate your team's current performance metrics vs. potential revenue gains with Craftsflow's AI platform &amp; services.
+    <p class="hero-subhead" style="margin: 0 auto; color: var(--paper-dim);">
+      Select your category below to calculate your exact financial leaks or projected marketing returns.
     </p>
   </div>
 </section>
 
-<section class="section" style="padding-top: 20px; background: #070B10;">
+<section class="section" style="padding-top: 20px; background: var(--ink);">
   <div class="calc-container-page">
     
-    <!-- CARD 1: TOP METRICS & OPPORTUNITY -->
+    <!-- MAIN CALCULATOR CARD -->
     <div class="calc-card-outer">
 
       <!-- Service Mode Selector: Without Ads vs With Paid Ads -->
       <div class="service-mode-tabs">
         <button class="mode-tab-btn active" id="mode-no-ads" onclick="switchServiceMode('no-ads')">
-          <span>⚡ Recovery &amp; AI System (Without Paid Ads)</span>
+          <span>⚡ Revenue Leak Recovery (Without Ads)</span>
         </button>
         <button class="mode-tab-btn" id="mode-with-ads" onclick="switchServiceMode('with-ads')">
           <span>🚀 Full Growth Pipeline (With Paid Ads)</span>
@@ -359,94 +336,31 @@ breadcrumbs: Home > Calculator
 
       <div class="calc-grid-layout">
         
-        <!-- LEFT: INPUTS -->
+        <!-- LEFT: 2 CLEAN SLIDER INPUTS ONLY -->
         <div>
           <div class="calc-header-title">
             <div class="calc-icon-badge">
-              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/></svg>
+              <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
             </div>
-            <span>Your Current Metrics</span>
+            <span>Your Input Metrics</span>
           </div>
 
-          <div class="calc-form-group">
+          <!-- INPUT 1: Missed Calls OR Ad Spend -->
+          <div class="calc-form-group" id="group-input-1">
             <div class="calc-form-label-row">
-              <label class="calc-form-label" for="inp-agents">Call Center Agents / CSRs</label>
-              <span class="calc-range-val" id="val-agents">1</span>
+              <label class="calc-form-label" id="lbl-input-1" for="slide-input-1">Missed Calls Per Week</label>
+              <span class="calc-range-val" id="val-input-1">12 calls</span>
             </div>
-            <input type="number" class="calc-input-field" id="inp-agents" value="1" min="1" max="100" oninput="syncInputs('agents')">
+            <input type="range" class="calc-slider" id="slide-input-1" min="2" max="50" step="1" value="12" oninput="recalculateMetrics()">
           </div>
 
-          <div class="calc-form-group">
+          <!-- INPUT 2: Average Job / Customer Value -->
+          <div class="calc-form-group" id="group-input-2">
             <div class="calc-form-label-row">
-              <label class="calc-form-label" for="inp-rate-curr">Current Booking Rate (%)</label>
-              <span class="calc-range-val" id="val-rate-curr">70%</span>
+              <label class="calc-form-label" id="lbl-input-2" for="slide-input-2">Average Job / Deal Value ($)</label>
+              <span class="calc-range-val" id="val-input-2">$1,500</span>
             </div>
-            <input type="range" class="calc-slider" id="slide-rate-curr" min="10" max="95" value="70" oninput="syncSliders('rate-curr')">
-            <input type="number" class="calc-input-field" id="inp-rate-curr" value="70" min="1" max="99" style="margin-top:6px;" oninput="syncInputs('rate-curr')">
-          </div>
-
-          <div class="calc-form-group">
-            <div class="calc-form-label-row">
-              <label class="calc-form-label" for="inp-rate-target">Target Booking Rate (%)</label>
-              <span class="calc-range-val" id="val-rate-target">80%</span>
-            </div>
-            <input type="range" class="calc-slider" id="slide-rate-target" min="20" max="99" value="80" oninput="syncSliders('rate-target')">
-            <input type="number" class="calc-input-field" id="inp-rate-target" value="80" min="1" max="100" style="margin-top:6px;" oninput="syncInputs('rate-target')">
-          </div>
-
-          <div class="calc-form-group">
-            <div class="calc-form-label-row">
-              <label class="calc-form-label" for="inp-ticket">Average Ticket Size ($)</label>
-              <span class="calc-range-val" id="val-ticket">$1,000</span>
-            </div>
-            <input type="range" class="calc-slider" id="slide-ticket" min="200" max="10000" step="100" value="1000" oninput="syncSliders('ticket')">
-            <input type="number" class="calc-input-field" id="inp-ticket" value="1000" min="10" step="50" style="margin-top:6px;" oninput="syncInputs('ticket')">
-          </div>
-
-          <div class="calc-form-group">
-            <div class="calc-form-label-row">
-              <label class="calc-form-label" for="inp-calls-day"># of Qualified Calls / Day / CSR</label>
-              <span class="calc-range-val" id="val-calls-day">1</span>
-            </div>
-            <input type="number" class="calc-input-field" id="inp-calls-day" value="1" min="0.1" step="0.5" oninput="syncInputs('calls-day')">
-          </div>
-
-          <!-- Paid Ads Specific Inputs (Shown when With Paid Ads mode is active) -->
-          <div id="ads-input-group" style="display: none; border-top: 1px dashed #CBD5E1; padding-top: 16px; margin-top: 16px;">
-            <div class="calc-form-group">
-              <div class="calc-form-label-row">
-                <label class="calc-form-label" for="inp-ad-spend">Monthly Ad Spend ($)</label>
-                <span class="calc-range-val" id="val-ad-spend">$1,500</span>
-              </div>
-              <input type="range" class="calc-slider" id="slide-ad-spend" min="500" max="15000" step="250" value="1500" oninput="syncSliders('ad-spend')">
-              <input type="number" class="calc-input-field" id="inp-ad-spend" value="1500" min="250" step="100" style="margin-top:6px;" oninput="syncInputs('ad-spend')">
-            </div>
-
-            <div class="calc-form-group">
-              <div class="calc-form-label-row">
-                <label class="calc-form-label" for="inp-cpl">Cost Per Lead ($)</label>
-                <span class="calc-range-val" id="val-cpl">$40</span>
-              </div>
-              <input type="range" class="calc-slider" id="slide-cpl" min="15" max="150" step="5" value="40" oninput="syncSliders('cpl')">
-              <input type="number" class="calc-input-field" id="inp-cpl" value="40" min="5" step="5" style="margin-top:6px;" oninput="syncInputs('cpl')">
-            </div>
-          </div>
-
-          <!-- Service Addon Checkboxes -->
-          <div class="addon-options-box">
-            <div class="addon-box-title">Craftsflow Features Enabled</div>
-            <label class="addon-check-item">
-              <input type="checkbox" id="chk-missed-call" checked onchange="recalculateMetrics()">
-              <span>60-Sec Missed Call Recovery (+5% Target Rate)</span>
-            </label>
-            <label class="addon-check-item">
-              <input type="checkbox" id="chk-ai-answer" checked onchange="recalculateMetrics()">
-              <span>24/7 AI After-Hours Booking (+5% Target Rate)</span>
-            </label>
-            <label class="addon-check-item">
-              <input type="checkbox" id="chk-database" checked onchange="recalculateMetrics()">
-              <span>Past Customer Database Reactivation (+2 Bonus Deals/mo)</span>
-            </label>
+            <input type="range" class="calc-slider" id="slide-input-2" min="200" max="10000" step="100" value="1500" oninput="recalculateMetrics()">
           </div>
 
         </div>
@@ -455,7 +369,7 @@ breadcrumbs: Home > Calculator
         <div>
           <div class="calc-header-title">
             <div class="calc-icon-badge">
-              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
             </div>
             <span>Your Revenue Opportunity</span>
           </div>
@@ -468,22 +382,22 @@ breadcrumbs: Home > Calculator
 
             <div class="calc-metric-box">
               <div class="calc-metric-lbl">Improved Monthly Revenue</div>
-              <div class="calc-metric-val" id="res-impr-rev">$16,000</div>
+              <div class="calc-metric-val" id="res-impr-rev">$35,600</div>
             </div>
 
             <div class="calc-metric-box">
               <div class="calc-metric-lbl">Additional Monthly Revenue</div>
-              <div class="calc-metric-val" id="res-add-monthly">$2,000</div>
+              <div class="calc-metric-val highlight" id="res-add-monthly">$21,600</div>
             </div>
 
             <div class="calc-metric-box">
               <div class="calc-metric-lbl">Additional Yearly Revenue</div>
-              <div class="calc-metric-val" id="res-add-yearly">$24,000</div>
+              <div class="calc-metric-val highlight" id="res-add-yearly">$259,200</div>
             </div>
 
             <div class="calc-metric-box full-width">
-              <div class="calc-metric-lbl">Additional Deals Per Month</div>
-              <div class="calc-metric-val" id="res-add-deals">+2.0 deals</div>
+              <div class="calc-metric-lbl">Additional Deals Captured Per Month</div>
+              <div class="calc-metric-val highlight" id="res-add-deals">+14.4 deals</div>
             </div>
           </div>
         </div>
@@ -495,14 +409,14 @@ breadcrumbs: Home > Calculator
     <div class="calc-card-outer">
       <div class="calc-header-title" style="margin-bottom: 12px;">
         <div class="calc-icon-badge">
-          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path d="M3 3v18h18M18 9l-5 5-4-4-5 5"/></svg>
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path d="M3 3v18h18M18 9l-5 5-4-4-5 5"/></svg>
         </div>
         <span>12-Month Revenue Forecast</span>
       </div>
       <p class="forecast-subtitle">Cumulative revenue comparison: See how the gap grows over time between current and improved performance.</p>
 
       <div class="chart-wrapper-box" id="chart-wrapper">
-        <!-- Floating Tooltip Card matching input_file_0.png -->
+        <!-- Floating Tooltip Card matching Craftsflow dark theme -->
         <div class="chart-tooltip-card" id="chart-tooltip">
           <div class="tooltip-month-title" id="tooltip-month">Jun</div>
           <div class="tooltip-line curr">
@@ -511,23 +425,23 @@ breadcrumbs: Home > Calculator
           </div>
           <div class="tooltip-line impr">
             <span>With Craftsflow :</span>
-            <strong id="tooltip-impr">$96,000</strong>
+            <strong id="tooltip-impr" style="color: var(--accent-gold);">$213,600</strong>
           </div>
         </div>
 
         <svg class="chart-svg-container" id="forecast-chart-svg" viewBox="0 0 700 240" preserveAspectRatio="none">
-          <!-- SVG elements updated dynamically -->
+          <!-- Dynamic SVG graph content -->
         </svg>
 
         <div class="chart-legend-strip">
-          <div><span class="legend-dot" style="background: #94A3B8;"></span> Current Trajectory</div>
-          <div><span class="legend-dot" style="background: #0F172A;"></span> With Craftsflow</div>
+          <div><span class="legend-dot" style="background: #8FA3B5;"></span> Current Trajectory</div>
+          <div><span class="legend-dot" style="background: #FFC72C;"></span> With Craftsflow</div>
         </div>
       </div>
 
       <div class="gap-callout-box">
-        <div class="gap-callout-title" id="callout-title">Revenue Gap by Year End: $24,000</div>
-        <div class="gap-callout-desc">This is the additional revenue you could capture by improving your team's performance with Craftsflow's AI coaching &amp; automation system.</div>
+        <div class="gap-callout-title" id="callout-title">Revenue Gap by Year End: $259,200</div>
+        <div class="gap-callout-desc">This is the additional revenue you could capture by stopping missed call leaks and improving team response speed with Craftsflow.</div>
       </div>
     </div>
 
@@ -547,89 +461,78 @@ breadcrumbs: Home > Calculator
     currentMode = mode;
     document.getElementById('mode-no-ads').classList.toggle('active', mode === 'no-ads');
     document.getElementById('mode-with-ads').classList.toggle('active', mode === 'with-ads');
-    document.getElementById('ads-input-group').style.display = mode === 'with-ads' ? 'block' : 'none';
-    recalculateMetrics();
-  }
 
-  function syncSliders(key) {
-    const slide = document.getElementById('slide-' + key);
-    const inp = document.getElementById('inp-' + key);
-    if (slide && inp) {
-      inp.value = slide.value;
-      recalculateMetrics();
-    }
-  }
+    const lbl1 = document.getElementById('lbl-input-1');
+    const slide1 = document.getElementById('slide-input-1');
 
-  function syncInputs(key) {
-    const slide = document.getElementById('slide-' + key);
-    const inp = document.getElementById('inp-' + key);
-    if (slide && inp) {
-      slide.value = inp.value;
+    if (mode === 'no-ads') {
+      lbl1.textContent = 'Missed Calls Per Week';
+      slide1.min = 2;
+      slide1.max = 50;
+      slide1.step = 1;
+      slide1.value = 12;
+    } else {
+      lbl1.textContent = 'Monthly Ad Spend Budget ($)';
+      slide1.min = 500;
+      slide1.max = 15000;
+      slide1.step = 250;
+      slide1.value = 1500;
     }
+
     recalculateMetrics();
   }
 
   function recalculateMetrics() {
-    // Read base inputs
-    const agents = Math.max(1, parseFloat(document.getElementById('inp-agents').value) || 1);
-    let rateCurr = Math.max(0, Math.min(100, parseFloat(document.getElementById('inp-rate-curr').value) || 0));
-    let rateTarget = Math.max(0, Math.min(100, parseFloat(document.getElementById('inp-rate-target').value) || 0));
-    const ticket = Math.max(0, parseFloat(document.getElementById('inp-ticket').value) || 0);
-    const callsDay = Math.max(0, parseFloat(document.getElementById('inp-calls-day').value) || 0);
+    const val1 = parseFloat(document.getElementById('slide-input-1').value) || 0;
+    const val2 = parseFloat(document.getElementById('slide-input-2').value) || 0;
 
-    // Apply Service Add-on boosts
-    const chkMissed = document.getElementById('chk-missed-call').checked;
-    const chkAI = document.getElementById('chk-ai-answer').checked;
-    const chkDB = document.getElementById('chk-database').checked;
+    const fmtCurr = (num) => '$' + Math.round(num).toLocaleString('en-US');
+    const fmtDeals = (num) => '+' + num.toFixed(1) + ' deals';
 
-    let targetBoost = 0;
-    if (chkMissed) targetBoost += 5;
-    if (chkAI) targetBoost += 5;
+    let currRev = 0;
+    let imprRev = 0;
+    let addMonthlyRev = 0;
+    let addDeals = 0;
 
-    const effectiveTargetRate = Math.min(99, rateTarget + targetBoost);
+    if (currentMode === 'no-ads') {
+      // Mode A: Recovery (Without Ads)
+      const missedCallsWeek = val1;
+      const jobValue = val2;
 
-    // Update label text displays
-    document.getElementById('val-agents').textContent = agents;
-    document.getElementById('val-rate-curr').textContent = rateCurr + '%';
-    document.getElementById('val-rate-target').textContent = effectiveTargetRate + '%';
-    document.getElementById('val-ticket').textContent = '$' + Math.round(ticket).toLocaleString('en-US');
-    document.getElementById('val-calls-day').textContent = callsDay;
+      document.getElementById('val-input-1').textContent = missedCallsWeek + ' calls/wk';
+      document.getElementById('val-input-2').textContent = fmtCurr(jobValue);
 
-    // Organic Monthly Calls
-    let monthlyCalls = agents * callsDay * 20;
+      // 4 weeks per month, 30% booking rate on recovered missed calls
+      const monthlyMissedCalls = missedCallsWeek * 4;
+      addDeals = monthlyMissedCalls * 0.30;
+      addMonthlyRev = addDeals * jobValue;
 
-    // Paid Ads Calculation (if With Paid Ads mode)
-    let adNewDeals = 0;
-    let adSpend = 0;
-    let cpl = 40;
+      // Baseline monthly revenue assumes existing bookings
+      currRev = Math.max(5000, Math.round(addMonthlyRev * 0.65));
+      imprRev = currRev + addMonthlyRev;
 
-    if (currentMode === 'with-ads') {
-      adSpend = parseFloat(document.getElementById('inp-ad-spend').value) || 0;
-      cpl = Math.max(1, parseFloat(document.getElementById('inp-cpl').value) || 40);
-      document.getElementById('val-ad-spend').textContent = '$' + Math.round(adSpend).toLocaleString('en-US');
-      document.getElementById('val-cpl').textContent = '$' + Math.round(cpl).toLocaleString('en-US');
+    } else {
+      // Mode B: Growth Pipeline (With Paid Ads)
+      const adSpend = val1;
+      const jobValue = val2;
 
-      const adLeads = adSpend / cpl;
-      monthlyCalls += adLeads;
+      document.getElementById('val-input-1').textContent = fmtCurr(adSpend);
+      document.getElementById('val-input-2').textContent = fmtCurr(jobValue);
+
+      // Cost per lead = $40 avg
+      const cpl = 40;
+      const newLeads = adSpend / cpl;
+      const bookedJobs = newLeads * 0.35; // 35% lead to customer booking rate
+      addDeals = bookedJobs;
+
+      const grossAddRev = bookedJobs * jobValue;
+      addMonthlyRev = Math.max(0, grossAddRev - adSpend);
+
+      currRev = Math.max(5000, Math.round(grossAddRev * 0.5));
+      imprRev = currRev + addMonthlyRev;
     }
 
-    // Database Reactivation Bonus Deals
-    const bonusDbDeals = chkDB ? 2 : 0;
-
-    // Deals calculation
-    const currDeals = (agents * callsDay * 20) * (rateCurr / 100);
-    const imprDeals = (monthlyCalls * (effectiveTargetRate / 100)) + bonusDbDeals;
-    const addDeals = imprDeals - currDeals;
-
-    // Revenue calculation
-    const currRev = currDeals * ticket;
-    const imprRev = (imprDeals * ticket) - (currentMode === 'with-ads' ? adSpend : 0);
-    const addMonthlyRev = Math.max(0, imprRev - currRev);
     const addYearlyRev = addMonthlyRev * 12;
-
-    // Formatter
-    const fmtCurr = (num) => '$' + Math.round(num).toLocaleString('en-US');
-    const fmtDeals = (num) => (num >= 0 ? '+' : '') + num.toFixed(1) + ' deals';
 
     // Update DOM Metrics
     document.getElementById('res-curr-rev').textContent = fmtCurr(currRev);
@@ -690,14 +593,14 @@ breadcrumbs: Home > Calculator
     const gridYValues = [0, maxVal * 0.25, maxVal * 0.5, maxVal * 0.75, maxVal];
     gridYValues.forEach(val => {
       const yPos = getY(val);
-      html += `<line x1="${paddingLeft}" y1="${yPos}" x2="${width - paddingRight}" y2="${yPos}" stroke="#E2E8F0" stroke-dasharray="3 3" stroke-width="1"/>`;
-      html += `<text x="${paddingLeft - 8}" y="${yPos + 4}" fill="#94A3B8" font-size="10" text-anchor="end" font-weight="600">${fmtYLabel(val)}</text>`;
+      html += `<line x1="${paddingLeft}" y1="${yPos}" x2="${width - paddingRight}" y2="${yPos}" stroke="rgba(255,255,255,0.08)" stroke-dasharray="3 3" stroke-width="1"/>`;
+      html += `<text x="${paddingLeft - 8}" y="${yPos + 4}" fill="#8FA3B5" font-size="10" text-anchor="end" font-weight="600">${fmtYLabel(val)}</text>`;
     });
 
     // Draw month labels on X axis
     months.forEach((month, idx) => {
       const xPos = getX(idx);
-      html += `<text x="${xPos}" y="${height - 10}" fill="#64748B" font-size="11" text-anchor="middle" font-weight="600">${month}</text>`;
+      html += `<text x="${xPos}" y="${height - 10}" fill="#8FA3B5" font-size="11" text-anchor="middle" font-weight="600">${month}</text>`;
     });
 
     // Build SVG path strings
@@ -717,9 +620,9 @@ breadcrumbs: Home > Calculator
       }
     });
 
-    // Draw trend lines
-    html += `<path d="${currPath}" fill="none" stroke="#CBD5E1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>`;
-    html += `<path d="${imprPath}" fill="none" stroke="#0F172A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>`;
+    // Draw trend lines (Current in Gray, Craftsflow in Gold)
+    html += `<path d="${currPath}" fill="none" stroke="#8FA3B5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>`;
+    html += `<path d="${imprPath}" fill="none" stroke="#FFC72C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>`;
 
     // Draw dots on data points
     months.forEach((_, idx) => {
@@ -727,19 +630,19 @@ breadcrumbs: Home > Calculator
       const yCurr = getY(currCumul[idx]);
       const yImpr = getY(imprCumul[idx]);
 
-      html += `<circle cx="${x}" cy="${yCurr}" r="3.5" fill="#94A3B8"/>`;
-      html += `<circle cx="${x}" cy="${yImpr}" r="4.5" fill="#0F172A"/>`;
+      html += `<circle cx="${x}" cy="${yCurr}" r="3.5" fill="#8FA3B5"/>`;
+      html += `<circle cx="${x}" cy="${yImpr}" r="4.5" fill="#FFC72C"/>`;
     });
 
     // Vertical Guideline placeholder
-    html += `<line id="hover-guide-line" x1="0" y1="${paddingTop}" x2="0" y2="${y0}" stroke="#0F172A" stroke-dasharray="3 3" stroke-width="1.5" opacity="0"/>`;
-    html += `<circle id="hover-curr-dot" cx="0" cy="0" r="5" fill="#94A3B8" stroke="#FFFFFF" stroke-width="2" opacity="0"/>`;
-    html += `<circle id="hover-impr-dot" cx="0" cy="0" r="6" fill="#0F172A" stroke="#FFFFFF" stroke-width="2" opacity="0"/>`;
+    html += `<line id="hover-guide-line" x1="0" y1="${paddingTop}" x2="0" y2="${y0}" stroke="#FFC72C" stroke-dasharray="3 3" stroke-width="1.5" opacity="0"/>`;
+    html += `<circle id="hover-curr-dot" cx="0" cy="0" r="5" fill="#8FA3B5" stroke="#0E151D" stroke-width="2" opacity="0"/>`;
+    html += `<circle id="hover-impr-dot" cx="0" cy="0" r="6" fill="#FFC72C" stroke="#0E151D" stroke-width="2" opacity="0"/>`;
 
     svg.innerHTML = html;
   }
 
-  // INTERACTIVE HOVER TOOLTIP LOGIC MATCHING input_file_0.png
+  // INTERACTIVE HOVER TOOLTIP LOGIC
   document.addEventListener('DOMContentLoaded', function() {
     recalculateMetrics();
 
@@ -752,7 +655,6 @@ breadcrumbs: Home > Calculator
       const mouseX = e.clientX - rect.left;
       const svgWidth = rect.width;
       
-      // Map mouse position to SVG viewBox coordinates (700px width)
       const scaleX = 700 / svgWidth;
       const viewBoxX = mouseX * scaleX;
 
