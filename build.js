@@ -163,20 +163,20 @@ function build() {
     const isHome = relativePath === 'index.html';
     const breadcrumbsHTML = isHome ? '' : generateBreadcrumbsHTML(metadata.breadcrumbs, rootPrefix);
 
-    // Assemble page
+    // Assemble page safely using functions to avoid JS string replacement pattern bugs ($', $&, etc.)
     let pageHTML = layoutTemplate
-      .replace(/{{title}}/g, metadata.title)
-      .replace(/{{description}}/g, metadata.description)
-      .replace(/{{rootPrefix}}/g, rootPrefix)
-      .replace(/{{header}}/g, header)
-      .replace(/{{footer}}/g, footerTemplate)
-      .replace(/{{breadcrumbs}}/g, breadcrumbsHTML)
-      .replace(/{{body}}/g, pageContent)
-      .replace(/{{ogImage}}/g, metadata.ogimage || metadata['og:image'] || metadata.og_image || 'https://craftsflow.com/images/vsl_thumbnail.png')
-      .replace(/{{canonical}}/g, `https://craftsflow.com/${cleanUrlPath}`);
+      .replace(/{{title}}/g, () => metadata.title)
+      .replace(/{{description}}/g, () => metadata.description)
+      .replace(/{{rootPrefix}}/g, () => rootPrefix)
+      .replace(/{{header}}/g, () => header)
+      .replace(/{{footer}}/g, () => footerTemplate)
+      .replace(/{{breadcrumbs}}/g, () => breadcrumbsHTML)
+      .replace(/{{body}}/g, () => pageContent)
+      .replace(/{{ogImage}}/g, () => metadata.ogimage || metadata['og:image'] || metadata.og_image || 'https://craftsflow.com/images/vsl_thumbnail.png')
+      .replace(/{{canonical}}/g, () => `https://craftsflow.com/${cleanUrlPath}`);
 
     // Clean up templates variables inside the footer/header
-    pageHTML = pageHTML.replace(/{{rootPrefix}}/g, rootPrefix);
+    pageHTML = pageHTML.replace(/{{rootPrefix}}/g, () => rootPrefix);
 
     // Ensure directory exists
     const destDir = path.dirname(destPath);
