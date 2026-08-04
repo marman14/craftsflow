@@ -1,112 +1,454 @@
 <!--
-title: Craftsflow Interactive Revenue & ROI Calculator
-description: Calculate how much money your business is losing to missed calls or calculate your projected return on ad spend with our interactive tool.
-breadcrumbs: Home > Revenue Calculator
+title: Interactive Revenue Opportunity & 12-Month Forecast Calculator | Craftsflow
+description: Calculate your current vs. improved monthly revenue, additional deals per month, and 12-month forecast with Craftsflow's interactive calculator.
+breadcrumbs: Home > Calculator
 -->
-<section class="funnel-hero" style="padding-bottom: 60px;">
+<style>
+  .calc-container-page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 16px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+  
+  .calc-card-outer {
+    background: #FAFAFA;
+    border: 1px solid #E5E7EB;
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 32px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    color: #111827;
+  }
+
+  .calc-header-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 24px;
+  }
+
+  .calc-icon-badge {
+    width: 32px;
+    height: 32px;
+    background: #0F172A;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    flex-shrink: 0;
+  }
+
+  .calc-grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.35fr;
+    gap: 40px;
+  }
+
+  @media (max-width: 860px) {
+    .calc-grid-layout {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+
+  /* Inputs column */
+  .calc-form-group {
+    margin-bottom: 20px;
+  }
+
+  .calc-form-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #4B5563;
+    margin-bottom: 8px;
+  }
+
+  .calc-input-field {
+    width: 100%;
+    background: #F9FAFB;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #111827;
+    outline: none;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+  }
+
+  .calc-input-field:focus {
+    border-color: #0F172A;
+    background: #FFFFFF;
+    box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.08);
+  }
+
+  /* Results Grid */
+  .calc-results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .calc-metric-box {
+    background: #EAECEE;
+    border: 1px solid #D1D5DB;
+    border-radius: 12px;
+    padding: 20px;
+  }
+
+  .calc-metric-box.full-width {
+    grid-column: span 2;
+  }
+
+  .calc-metric-lbl {
+    font-size: 11px;
+    font-weight: 700;
+    color: #4B5563;
+    text-transform: capitalize;
+    margin-bottom: 8px;
+  }
+
+  .calc-metric-val {
+    font-size: 32px;
+    font-weight: 800;
+    color: #0F172A;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  /* Forecast Chart Section */
+  .forecast-subtitle {
+    font-size: 14px;
+    color: #6B7280;
+    margin-top: -12px;
+    margin-bottom: 24px;
+  }
+
+  .chart-wrapper-box {
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    padding: 24px 20px 16px 20px;
+    margin-bottom: 24px;
+  }
+
+  .chart-svg-container {
+    width: 100%;
+    height: 240px;
+  }
+
+  .chart-legend-strip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    margin-top: 16px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #4B5563;
+  }
+
+  .legend-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 6px;
+  }
+
+  /* Bottom Callout Box */
+  .gap-callout-box {
+    background: #EAECEE;
+    border: 1px solid #D1D5DB;
+    border-radius: 12px;
+    padding: 20px 24px;
+  }
+
+  .gap-callout-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 4px;
+  }
+
+  .gap-callout-desc {
+    font-size: 14px;
+    color: #4B5563;
+    line-height: 1.5;
+  }
+
+  .calc-cta-strip {
+    text-align: center;
+    margin-top: 40px;
+  }
+</style>
+
+<section class="funnel-hero" style="padding-bottom: 40px;">
   <div class="container" style="text-align: center; max-width: 900px;">
     <h1 class="hero-h1" style="font-size: clamp(32px, 4vw, 48px); margin-bottom: 16px;">
-      Interactive Revenue Leak &amp; Growth Calculator
+      Interactive Revenue &amp; Growth Forecast
     </h1>
     <p class="hero-subhead" style="margin: 0 auto; color: #CBD5E1;">
-      Select your category below to calculate your exact financial leaks or projected marketing returns.
+      Calculate your team's current performance metrics vs. potential revenue gains with Craftsflow's AI platform.
     </p>
   </div>
 </section>
 
-<section class="calc-section" style="padding-top: 20px;">
-  <div class="container">
-    <div class="calc-tabs">
-      <button class="calc-tab-btn active" id="tab-calc-leak" onclick="switchCalcTab('leak')">
-        Card A: Revenue Leak Calculator 🩸
-      </button>
-      <button class="calc-tab-btn" id="tab-calc-growth" onclick="switchCalcTab('growth')">
-        Card B: New Lead Pipeline ROI 🚀
-      </button>
+<section class="section" style="padding-top: 20px; background: #070B10;">
+  <div class="calc-container-page">
+    
+    <!-- CARD 1: TOP METRICS & OPPORTUNITY -->
+    <div class="calc-card-outer">
+      <div class="calc-grid-layout">
+        
+        <!-- LEFT: INPUTS -->
+        <div>
+          <div class="calc-header-title">
+            <div class="calc-icon-badge">
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/></svg>
+            </div>
+            <span>Your Current Metrics</span>
+          </div>
+
+          <div class="calc-form-group">
+            <label class="calc-form-label" for="inp-agents">Call Center Agents</label>
+            <input type="number" class="calc-input-field" id="inp-agents" value="1" min="1" max="100" oninput="recalculateMetrics()">
+          </div>
+
+          <div class="calc-form-group">
+            <label class="calc-form-label" for="inp-rate-curr">Current Booking Rate (%)</label>
+            <input type="number" class="calc-input-field" id="inp-rate-curr" value="70" min="1" max="99" oninput="recalculateMetrics()">
+          </div>
+
+          <div class="calc-form-group">
+            <label class="calc-form-label" for="inp-rate-target">Target Booking Rate (%)</label>
+            <input type="number" class="calc-input-field" id="inp-rate-target" value="80" min="1" max="100" oninput="recalculateMetrics()">
+          </div>
+
+          <div class="calc-form-group">
+            <label class="calc-form-label" for="inp-ticket">Average Ticket Size ($)</label>
+            <input type="number" class="calc-input-field" id="inp-ticket" value="1000" min="10" step="50" oninput="recalculateMetrics()">
+          </div>
+
+          <div class="calc-form-group">
+            <label class="calc-form-label" for="inp-calls-day"># of Qualified Calls / Day / CSR</label>
+            <input type="number" class="calc-input-field" id="inp-calls-day" value="1" min="0.1" step="0.5" oninput="recalculateMetrics()">
+          </div>
+        </div>
+
+        <!-- RIGHT: REVENUE OPPORTUNITY -->
+        <div>
+          <div class="calc-header-title">
+            <div class="calc-icon-badge">
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+            <span>Your Revenue Opportunity</span>
+          </div>
+
+          <div class="calc-results-grid">
+            <div class="calc-metric-box">
+              <div class="calc-metric-lbl">Current Monthly Revenue</div>
+              <div class="calc-metric-val" id="res-curr-rev">$14,000</div>
+            </div>
+
+            <div class="calc-metric-box">
+              <div class="calc-metric-lbl">Improved Monthly Revenue</div>
+              <div class="calc-metric-val" id="res-impr-rev">$16,000</div>
+            </div>
+
+            <div class="calc-metric-box">
+              <div class="calc-metric-lbl">Additional Monthly Revenue</div>
+              <div class="calc-metric-val" id="res-add-monthly">$2,000</div>
+            </div>
+
+            <div class="calc-metric-box">
+              <div class="calc-metric-lbl">Additional Yearly Revenue</div>
+              <div class="calc-metric-val" id="res-add-yearly">$24,000</div>
+            </div>
+
+            <div class="calc-metric-box full-width">
+              <div class="calc-metric-lbl">Additional Deals Per Month</div>
+              <div class="calc-metric-val" id="res-add-deals">+2.0 deals</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
 
-    <div class="calc-box">
-      <!-- LEAK CALCULATOR -->
-      <div id="calc-leak-wrapper">
-        <div class="calc-grid">
-          <div>
-            <div class="calc-slider-group">
-              <div class="calc-slider-header">
-                <span>Missed Calls Per Week</span>
-                <span class="calc-slider-val" id="leak-calls-val">12</span>
-              </div>
-              <input type="range" class="calc-slider" id="leak-calls" min="2" max="40" value="12" oninput="updateLeakCalc()">
-            </div>
+    <!-- CARD 2: 12-MONTH FORECAST CHART -->
+    <div class="calc-card-outer">
+      <div class="calc-header-title" style="margin-bottom: 12px;">
+        <div class="calc-icon-badge">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path d="M3 3v18h18M18 9l-5 5-4-4-5 5"/></svg>
+        </div>
+        <span>12-Month Revenue Forecast</span>
+      </div>
+      <p class="forecast-subtitle">Cumulative revenue comparison: See how the gap grows over time between current and improved performance.</p>
 
-            <div class="calc-slider-group">
-              <div class="calc-slider-header">
-                <span>Average Job / Customer Value ($)</span>
-                <span class="calc-slider-val" id="leak-value-val">$1,500</span>
-              </div>
-              <input type="range" class="calc-slider" id="leak-value" min="200" max="10000" step="100" value="1500" oninput="updateLeakCalc()">
-            </div>
+      <div class="chart-wrapper-box">
+        <svg class="chart-svg-container" id="forecast-chart-svg" viewBox="0 0 700 220" preserveAspectRatio="none">
+          <!-- Grid lines, axes, and paths will be dynamically updated by JS -->
+        </svg>
 
-            <div class="calc-slider-group">
-              <div class="calc-slider-header">
-                <span>Estimated Booking Rate if Answered</span>
-                <span class="calc-slider-val" id="leak-rate-val">30%</span>
-              </div>
-              <input type="range" class="calc-slider" id="leak-rate" min="10" max="70" step="5" value="30" oninput="updateLeakCalc()">
-            </div>
-          </div>
-
-          <div class="calc-result-box">
-            <div class="calc-result-label">Estimated Revenue Bleeding</div>
-            <div class="calc-result-number" id="leak-result-monthly">$21,600</div>
-            <div class="calc-result-sub">lost every single month</div>
-            <div style="font-size: 13px; color: #94A3B8; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 12px;" id="leak-result-annual">
-              Annual Loss: <strong>$259,200 / year</strong>
-            </div>
-            <a href="https://cal.com/ar-webcrafts/craftsflow" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="margin-top: 20px; width: 100%;">Stop The Leak Now →</a>
-          </div>
+        <div class="chart-legend-strip">
+          <div><span class="legend-dot" style="background: #94A3B8;"></span> Current Trajectory</div>
+          <div><span class="legend-dot" style="background: #0F172A;"></span> With Craftsflow</div>
         </div>
       </div>
 
-      <!-- GROWTH CALCULATOR -->
-      <div id="calc-growth-wrapper" style="display: none;">
-        <div class="calc-grid">
-          <div>
-            <div class="calc-slider-group">
-              <div class="calc-slider-header">
-                <span>Monthly Ad Spend Budget ($)</span>
-                <span class="calc-slider-val" id="growth-spend-val">$1,500</span>
-              </div>
-              <input type="range" class="calc-slider" id="growth-spend" min="500" max="10000" step="250" value="1500" oninput="updateGrowthCalc()">
-            </div>
-
-            <div class="calc-slider-group">
-              <div class="calc-slider-header">
-                <span>Estimated Cost Per Lead in Your Industry ($)</span>
-                <span class="calc-slider-val" id="growth-cpl-val">$40</span>
-              </div>
-              <input type="range" class="calc-slider" id="growth-cpl" min="15" max="120" step="5" value="40" oninput="updateGrowthCalc()">
-            </div>
-
-            <div class="calc-slider-group">
-              <div class="calc-slider-header">
-                <span>Average Customer Value ($)</span>
-                <span class="calc-slider-val" id="growth-val-val">$2,500</span>
-              </div>
-              <input type="range" class="calc-slider" id="growth-val" min="300" max="15000" step="100" value="2500" oninput="updateGrowthCalc()">
-            </div>
-          </div>
-
-          <div class="calc-result-box" style="border-color: #10B981;">
-            <div class="calc-result-label">Projected Monthly Revenue</div>
-            <div class="calc-result-number gain-mode" id="growth-result-monthly">$23,437</div>
-            <div class="calc-result-sub" id="growth-result-leads">from ~37 new leads booked</div>
-            <div style="font-size: 13px; color: #94A3B8; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 12px;" id="growth-result-roi">
-              Projected ROI: <strong>15.6x Return</strong>
-            </div>
-            <a href="https://cal.com/ar-webcrafts/craftsflow" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="margin-top: 20px; width: 100%; background: #10B981; border-color: #10B981;">Build My Pipeline →</a>
-          </div>
-        </div>
+      <div class="gap-callout-box">
+        <div class="gap-callout-title" id="callout-title">Revenue Gap by Year End: $24,000</div>
+        <div class="gap-callout-desc">This is the additional revenue you could capture by improving your team's performance with Craftsflow's AI coaching &amp; automation system.</div>
       </div>
     </div>
+
+    <!-- CTA STRIP -->
+    <div class="calc-cta-strip">
+      <a href="https://cal.com/ar-webcrafts/craftsflow" target="_blank" rel="noopener" class="btn big">Capture Your Revenue Opportunity →</a>
+    </div>
+
   </div>
 </section>
+
+<script>
+  function recalculateMetrics() {
+    // Read input values
+    const agents = Math.max(1, parseFloat(document.getElementById('inp-agents').value) || 1);
+    const rateCurr = Math.max(0, Math.min(100, parseFloat(document.getElementById('inp-rate-curr').value) || 0));
+    const rateTarget = Math.max(0, Math.min(100, parseFloat(document.getElementById('inp-rate-target').value) || 0));
+    const ticket = Math.max(0, parseFloat(document.getElementById('inp-ticket').value) || 0);
+    const callsDay = Math.max(0, parseFloat(document.getElementById('inp-calls-day').value) || 0);
+
+    // Working days per month = 20
+    const monthlyCalls = agents * callsDay * 20;
+
+    // Monthly deals
+    const currDeals = monthlyCalls * (rateCurr / 100);
+    const imprDeals = monthlyCalls * (rateTarget / 100);
+    const addDeals = imprDeals - currDeals;
+
+    // Monthly revenues
+    const currRev = currDeals * ticket;
+    const imprRev = imprDeals * ticket;
+    const addMonthlyRev = imprRev - currRev;
+    const addYearlyRev = addMonthlyRev * 12;
+
+    // Format helpers
+    const fmtCurr = (num) => '$' + Math.round(num).toLocaleString('en-US');
+    const fmtDeals = (num) => (num >= 0 ? '+' : '') + num.toFixed(1) + ' deals';
+
+    // Update DOM metrics
+    document.getElementById('res-curr-rev').textContent = fmtCurr(currRev);
+    document.getElementById('res-impr-rev').textContent = fmtCurr(imprRev);
+    document.getElementById('res-add-monthly').textContent = fmtCurr(addMonthlyRev);
+    document.getElementById('res-add-yearly').textContent = fmtCurr(addYearlyRev);
+    document.getElementById('res-add-deals').textContent = fmtDeals(addDeals);
+
+    document.getElementById('callout-title').textContent = 'Revenue Gap by Year End: ' + fmtCurr(addYearlyRev);
+
+    // Render Chart
+    renderChart(currRev, imprRev);
+  }
+
+  function renderChart(currMonthly, imprMonthly) {
+    const svg = document.getElementById('forecast-chart-svg');
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    
+    // Calculate cumulative values
+    const currCumul = [];
+    const imprCumul = [];
+    for (let i = 1; i <= 12; i++) {
+      currCumul.push(currMonthly * i);
+      imprCumul.push(imprMonthly * i);
+    }
+
+    const maxVal = Math.max(imprCumul[11], 1000);
+    
+    // Dimensions
+    const paddingLeft = 50;
+    const paddingRight = 20;
+    const paddingTop = 20;
+    const paddingBottom = 30;
+    const width = 700;
+    const height = 220;
+    const graphWidth = width - paddingLeft - paddingRight;
+    const graphHeight = height - paddingTop - paddingBottom;
+
+    // Y scale ticks (3 ticks: 0, maxVal/2, maxVal)
+    const fmtYLabel = (val) => {
+      if (val >= 1000000) return '$' + (val / 1000000).toFixed(1) + 'M';
+      if (val >= 1000) return '$' + Math.round(val / 1000) + 'K';
+      return '$' + Math.round(val);
+    };
+
+    const y0 = height - paddingBottom;
+    const yMid = height - paddingBottom - (graphHeight / 2);
+    const yTop = paddingTop;
+
+    // Compute point coordinates
+    const getX = (index) => paddingLeft + (index * (graphWidth / 11));
+    const getY = (value) => y0 - ((value / maxVal) * graphHeight);
+
+    let html = '';
+
+    // Draw background grid lines (horizontal)
+    const gridYValues = [0, maxVal / 2, maxVal];
+    gridYValues.forEach(val => {
+      const yPos = getY(val);
+      html += `<line x1="${paddingLeft}" y1="${yPos}" x2="${width - paddingRight}" y2="${yPos}" stroke="#E2E8F0" stroke-dasharray="3 3" stroke-width="1"/>`;
+      html += `<text x="${paddingLeft - 8}" y="${yPos + 4}" fill="#94A3B8" font-size="10" text-anchor="end" font-weight="600">${fmtYLabel(val)}</text>`;
+    });
+
+    // Draw month labels on X axis
+    months.forEach((month, idx) => {
+      const xPos = getX(idx);
+      html += `<text x="${xPos}" y="${height - 8}" fill="#64748B" font-size="11" text-anchor="middle" font-weight="600">${month}</text>`;
+    });
+
+    // Build SVG path strings
+    let currPath = '';
+    let imprPath = '';
+    months.forEach((_, idx) => {
+      const x = getX(idx);
+      const yCurr = getY(currCumul[idx]);
+      const yImpr = getY(imprCumul[idx]);
+
+      if (idx === 0) {
+        currPath += `M ${x} ${yCurr}`;
+        imprPath += `M ${x} ${yImpr}`;
+      } else {
+        currPath += ` L ${x} ${yCurr}`;
+        imprPath += ` L ${x} ${yImpr}`;
+      }
+    });
+
+    // Draw trend lines
+    html += `<path d="${currPath}" fill="none" stroke="#CBD5E1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>`;
+    html += `<path d="${imprPath}" fill="none" stroke="#0F172A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>`;
+
+    // Draw dots on data points
+    months.forEach((_, idx) => {
+      const x = getX(idx);
+      const yCurr = getY(currCumul[idx]);
+      const yImpr = getY(imprCumul[idx]);
+
+      html += `<circle cx="${x}" cy="${yCurr}" r="3.5" fill="#94A3B8"/>`;
+      html += `<circle cx="${x}" cy="${yImpr}" r="4.5" fill="#0F172A"/>`;
+    });
+
+    svg.innerHTML = html;
+  }
+
+  // Initial calculation on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    recalculateMetrics();
+  });
+</script>

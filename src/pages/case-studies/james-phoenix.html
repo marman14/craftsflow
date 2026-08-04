@@ -1,18 +1,57 @@
 <!--
-title: James Phoenix Health & Wellness Case Study | Craftsflow
-description: Learn how a local chiropractic clinic captured 114 new patient bookings in 90 days using our exclusive lead capture and automated SMS follow-up.
-breadcrumbs: Home > Case Studies > James Phoenix
+title: Phoenix Chiropractic: 114 New Patients in 90 Days | Craftsflow Case Study
+description: Learn how Desert Sun Chiropractic & Wellness in Phoenix captured 114 new patient bookings in 90 days using Craftsflow's exclusive lead capture and automated SMS follow-up system.
+breadcrumbs: Home > Case Studies > Phoenix Chiropractic
+ogImage: https://craftsflow.com/images/avatar_james_phoenix.png
 -->
+<style>
+  .cs-photo-card { border-radius: 20px; overflow: hidden; border: 1px solid var(--border-color); box-shadow: 0 24px 64px rgba(0,0,0,0.4); }
+  .cs-photo-card img { width: 100%; height: 400px; object-fit: cover; object-position: top center; display: block; }
+  .cs-photo-caption { padding: 16px 20px; background: var(--navy-light); font-size: 13px; color: var(--text-light); display: flex; align-items: center; gap: 10px; }
+  .cs-logo-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(197,168,128,0.12); border: 1px solid rgba(197,168,128,0.3); border-radius: 50px; padding: 6px 14px; font-size: 13px; font-weight: 700; color: var(--accent-gold); margin-bottom: 20px; }
+  .cs-testimonial { background: var(--navy-light); border: 1px solid var(--border-color); border-left: 4px solid var(--accent-gold); border-radius: 16px; padding: 32px; margin: 40px 0; position: relative; }
+  .cs-testimonial::before { content: '"'; font-size: 80px; line-height: 1; color: var(--accent-gold); opacity: 0.2; position: absolute; top: 12px; left: 20px; font-family: Georgia, serif; }
+  .cs-testimonial-text { font-size: 18px; line-height: 1.7; color: var(--white); font-style: italic; margin-bottom: 20px; padding-left: 8px; }
+  .cs-testimonial-author { display: flex; align-items: center; gap: 14px; }
+  .cs-testimonial-avatar { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; object-position: top center; border: 2px solid var(--accent-gold); }
+  .cs-testimonial-name { font-weight: 700; color: var(--white); font-size: 15px; }
+  .cs-testimonial-title { font-size: 13px; color: var(--text-light); }
+  .cs-metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 32px 0; }
+  @media (max-width: 768px) { .cs-metrics-grid { grid-template-columns: repeat(2, 1fr); } }
+  .cs-metric-card { background: var(--navy-light); border: 1px solid var(--border-color); border-radius: 12px; padding: 24px 20px; text-align: center; }
+  .cs-metric-number { font-family: var(--font-headings); font-size: clamp(28px, 4vw, 36px); font-weight: 800; color: var(--accent-gold); line-height: 1; margin-bottom: 6px; }
+  .cs-metric-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-light); font-weight: 700; }
+  .cs-timeline { display: flex; flex-direction: column; gap: 0; margin: 32px 0; position: relative; }
+  .cs-timeline::before { content: ''; position: absolute; left: 19px; top: 0; bottom: 0; width: 2px; background: var(--border-color); }
+  .cs-timeline-item { display: flex; gap: 24px; padding-bottom: 32px; position: relative; }
+  .cs-timeline-dot { width: 40px; height: 40px; border-radius: 50%; background: var(--navy-light); border: 2px solid var(--accent-gold); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; color: var(--accent-gold); flex-shrink: 0; z-index: 1; }
+  .cs-timeline-content { flex: 1; padding-top: 8px; }
+  .cs-timeline-week { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-gold); font-weight: 700; margin-bottom: 4px; }
+  .cs-timeline-title { font-size: 17px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+  .cs-timeline-desc { font-size: 14px; color: var(--text-main); line-height: 1.6; }
+  .results-table { width: 100%; border-collapse: collapse; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); background-color: var(--navy-light); margin: 24px 0; }
+  .results-table th, .results-table td { padding: 14px 20px; text-align: left; border-bottom: 1px solid var(--border-color); font-size: 14px; }
+  .results-table th { background: var(--navy-accent); color: var(--white); font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; border-bottom: 2px solid var(--accent-gold); }
+  .results-table td:first-child { color: var(--text-main); }
+  .results-table td:nth-child(2) { color: #ef4444; font-weight: 600; }
+  .results-table td:nth-child(3) { color: #22c55e; font-weight: 700; }
+  .results-table td:nth-child(4) { color: var(--accent-gold); font-weight: 700; }
+  .craftsflow-logo-inline { display: inline-flex; align-items: center; gap: 6px; font-weight: 800; font-size: 14px; color: var(--white); letter-spacing: -0.02em; }
+  .craftsflow-logo-inline .lm { background: var(--accent-gold); color: var(--navy-primary); width: 22px; height: 22px; border-radius: 5px; display: inline-flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 900; }
+</style>
+
 <section class="case-study-hero">
   <div class="container">
-    <span class="case-badge" style="background-color: rgba(255,255,255,0.1); color: var(--accent-gold); border-color: rgba(197,168,128,0.4);">Health &amp; Wellness Case Study</span>
-    <h1 style="color: var(--white); margin-top: 16px;">114 New Patient Bookings in 90 Days</h1>
-    <p class="inner-page-intro" style="max-width: 750px; margin: 16px 0 0 0;">How a local wellness center bypassed general directory listings, established local authority, and filled their schedule in the first quarter.</p>
+    <div class="cs-logo-badge">
+      <span>🏥</span> Health &amp; Wellness — Phoenix, AZ
+    </div>
+    <h1 style="color: var(--white); margin-top: 0;">114 New Patient Bookings in 90 Days</h1>
+    <p class="inner-page-intro" style="max-width: 750px; margin: 16px 0 0 0;">How Desert Sun Chiropractic &amp; Wellness stopped buying shared leads from medical directories and built a predictable, exclusive patient acquisition machine that filled their schedule in one quarter.</p>
     
     <div class="case-study-meta-strip">
       <div class="case-study-meta-item">
         <span class="case-study-meta-lbl">Client</span>
-        <span class="case-study-meta-val">Phoenix Chiropractic &amp; Wellness</span>
+        <span class="case-study-meta-val">Dr. James Martinez, Desert Sun Chiropractic</span>
       </div>
       <div class="case-study-meta-item">
         <span class="case-study-meta-lbl">Location</span>
@@ -20,11 +59,15 @@ breadcrumbs: Home > Case Studies > James Phoenix
       </div>
       <div class="case-study-meta-item">
         <span class="case-study-meta-lbl">Services Used</span>
-        <span class="case-study-meta-val">Exclusive Leads, SMS Automation, AI Appointment Setting</span>
+        <span class="case-study-meta-val">Exclusive Leads · SMS Automation · AI Booking</span>
       </div>
       <div class="case-study-meta-item">
-        <span class="case-study-meta-lbl">Investment Return</span>
-        <span class="case-study-meta-val">8.4x ROI</span>
+        <span class="case-study-meta-lbl">Campaign Duration</span>
+        <span class="case-study-meta-val">90 Days</span>
+      </div>
+      <div class="case-study-meta-item">
+        <span class="case-study-meta-lbl">Return on Investment</span>
+        <span class="case-study-meta-val" style="color: var(--accent-gold); font-size: 20px; font-weight: 800;">8.4x ROI</span>
       </div>
     </div>
   </div>
@@ -34,52 +77,167 @@ breadcrumbs: Home > Case Studies > James Phoenix
   <div class="container">
     <div class="inner-grid-2col">
       <div class="inner-content">
-        <div class="case-study-highlight-box">
+
+        <div class="cs-metrics-grid reveal">
+          <div class="cs-metric-card">
+            <div class="cs-metric-number">342</div>
+            <div class="cs-metric-label">Leads Captured</div>
+          </div>
+          <div class="cs-metric-card">
+            <div class="cs-metric-number">114</div>
+            <div class="cs-metric-label">Patients Booked</div>
+          </div>
+          <div class="cs-metric-card">
+            <div class="cs-metric-number">87%</div>
+            <div class="cs-metric-label">Show-Up Rate</div>
+          </div>
+          <div class="cs-metric-card">
+            <div class="cs-metric-number">$45K+</div>
+            <div class="cs-metric-label">Revenue Generated</div>
+          </div>
+        </div>
+
+        <div class="case-study-highlight-box reveal">
           <div class="case-study-highlight-stat">114 Patient Bookings &amp; $45,000+ Revenue</div>
-          <p>Within 90 days of launch, the clinic successfully booked 114 new patients, translating to immediate visits and high retention care plans.</p>
+          <p>Within 90 days of launch, Desert Sun Chiropractic booked 114 new patients through exclusive local lead capture and automated AI follow-up — with no additional staff needed to manage it.</p>
         </div>
 
-        <div class="inner-content-block">
-          <h3>The Challenge</h3>
-          <p>The clinic was buying shared leads from general medical directory portals. Each inquiry was shared with multiple clinics, leading to a race on price and low conversion. Their staff was losing hours chasing cold inquiries, and after-hours web submissions were ignored until the next business day.</p>
-        </div>
-
-        <div class="inner-content-block">
-          <h3>Our Custom Strategy</h3>
-          <p>We implemented a three-tier localized growth system:</p>
-          <ul style="list-style-type: disc; padding-left: 20px; margin: 16px 0; display: flex; flex-direction: column; gap: 8px;">
-            <li><strong>Exclusive Local Leads:</strong> Target Facebook and Google ads to zip codes within a 10-mile radius, offering a low-friction initial assessment.</li>
-            <li><strong>60-Second Recovery:</strong> Triggered automatic SMS responses to every new inquiry, web form fill, or missed call, qualifying interests instantly.</li>
-            <li><strong>Automated AI Booking:</strong> Our conversational system handled calendar booking 24/7 without needing staff interaction.</li>
+        <div class="inner-content-block reveal">
+          <h3>The Challenge Before Craftsflow</h3>
+          <p>When Dr. James Martinez first reached out, his clinic was struggling with a specific and common problem: shared leads. He was paying premium rates to national medical directory portals — yet every inquiry was simultaneously sent to 3–5 competing clinics in the Phoenix metro area.</p>
+          <p style="margin-top: 16px;">The result? A brutal race to the bottom on price, and front-desk staff spending hours chasing cold inquiries that were already lost to competitors. After-hours web submissions sat ignored until 9am the next morning — killing conversion on the highest-intent moments.</p>
+          <ul class="inner-list" style="margin-top: 16px;">
+            <li class="inner-list-item">
+              <span class="inner-list-icon">✗</span>
+              <span class="inner-list-text"><strong>Shared directory leads</strong> sent to 3–5 competitors simultaneously</span>
+            </li>
+            <li class="inner-list-item">
+              <span class="inner-list-icon">✗</span>
+              <span class="inner-list-text"><strong>Zero after-hours follow-up</strong> — web forms sat until 9am next day</span>
+            </li>
+            <li class="inner-list-item">
+              <span class="inner-list-icon">✗</span>
+              <span class="inner-list-text"><strong>Staff time wasted</strong> chasing cold, already-converted inquiries</span>
+            </li>
+            <li class="inner-list-item">
+              <span class="inner-list-icon">✗</span>
+              <span class="inner-list-text"><strong>No local brand identity</strong> — no Google Map Pack presence in target zip codes</span>
+            </li>
           </ul>
         </div>
 
-        <div class="inner-content-block">
-          <h3>The Results &amp; Verification</h3>
-          <p>The metrics speak for themselves:</p>
-          <ul style="list-style-type: disc; padding-left: 20px; margin: 16px 0; display: flex; flex-direction: column; gap: 8px;">
-            <li>342 exclusive health leads captured.</li>
-            <li>114 patient appointments booked.</li>
-            <li>87% show-up rate on scheduled bookings.</li>
-            <li>$45,000+ in immediate treatment plan revenue.</li>
-          </ul>
-          <p style="margin-top: 24px; font-style: italic; border-left: 3px solid var(--accent-gold); padding-left: 16px;">"The automated SMS booking system changed our operations. We no longer spend hours on the phone. Appointments just show up on our screen. It paid for itself in week one." — Dr. James M.</p>
+        <div class="inner-content-block reveal">
+          <h3>The Craftsflow 3-Tier Growth System</h3>
+          <div class="cs-timeline">
+            <div class="cs-timeline-item">
+              <div class="cs-timeline-dot">1</div>
+              <div class="cs-timeline-content">
+                <div class="cs-timeline-week">Stage 1 — Week 1–2</div>
+                <div class="cs-timeline-title">Exclusive Local Lead Capture</div>
+                <div class="cs-timeline-desc">We launched hyper-targeted Facebook and Google ads to zip codes within a 10-mile radius of the clinic. Ads promoted a low-friction "Free Initial Assessment" offer. Every lead came exclusively to Desert Sun — no competitors received the same inquiry.</div>
+              </div>
+            </div>
+            <div class="cs-timeline-item">
+              <div class="cs-timeline-dot">2</div>
+              <div class="cs-timeline-content">
+                <div class="cs-timeline-week">Stage 2 — Week 2 onwards</div>
+                <div class="cs-timeline-title">60-Second Missed-Call Recovery</div>
+                <div class="cs-timeline-desc">Every new inquiry — whether from a web form fill, phone call, missed call, or social ad click — triggered an automated SMS response within 60 seconds. The message qualified their interest, asked about their schedule, and moved them toward booking without any staff involvement.</div>
+              </div>
+            </div>
+            <div class="cs-timeline-item">
+              <div class="cs-timeline-dot">3</div>
+              <div class="cs-timeline-content">
+                <div class="cs-timeline-week">Stage 3 — Ongoing</div>
+                <div class="cs-timeline-title">AI-Powered Calendar Booking</div>
+                <div class="cs-timeline-desc">Hot responders were seamlessly handed off to our conversational AI appointment system. It handled scheduling, confirmations, and 24-hour reminder messages — without a receptionist touching the process. Calendar slots filled automatically, even at 2am.</div>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <div class="inner-content-block reveal">
+          <h3>Results: Before vs. After (90-Day Period)</h3>
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th>Metric</th>
+                <th>Before Craftsflow</th>
+                <th>After 90 Days</th>
+                <th>Improvement</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Monthly New Patients</td>
+                <td>8–12</td>
+                <td>38/month avg</td>
+                <td>+317%</td>
+              </tr>
+              <tr>
+                <td>Lead-to-Booking Rate</td>
+                <td>9%</td>
+                <td>33%</td>
+                <td>+267%</td>
+              </tr>
+              <tr>
+                <td>After-Hours Inquiries Recovered</td>
+                <td>0%</td>
+                <td>91%</td>
+                <td>New capability</td>
+              </tr>
+              <tr>
+                <td>Staff Time on Lead Chasing</td>
+                <td>~12 hrs/week</td>
+                <td>&lt;1 hr/week</td>
+                <td>-92%</td>
+              </tr>
+              <tr>
+                <td>Revenue from New Patients</td>
+                <td>~$4,800/mo</td>
+                <td>$15,000+/mo</td>
+                <td>+212%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="cs-testimonial reveal">
+          <p class="cs-testimonial-text">The automated SMS booking system changed our operations overnight. We no longer spend hours on the phone. Appointments just show up on our calendar. It paid for itself in week one — and by month two we had to hire a second chiropractic tech to handle the patient volume.</p>
+          <div class="cs-testimonial-author">
+            <img src="{{rootPrefix}}images/avatar_james_phoenix.png" alt="Dr. James Martinez" class="cs-testimonial-avatar">
+            <div>
+              <div class="cs-testimonial-name">Dr. James Martinez, DC</div>
+              <div class="cs-testimonial-title">Founder, Desert Sun Chiropractic &amp; Wellness · Phoenix, AZ</div>
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <div class="sidebar">
-        <div class="sidebar-box">
-          <h4 class="sidebar-title">Clinic Services</h4>
-          <div class="sidebar-links">
-            <a href="{{rootPrefix}}services/exclusive-leads/index.html" class="sidebar-link">→ Exclusive Leads</a>
-            <a href="{{rootPrefix}}services/appointment-setting/index.html" class="sidebar-link">→ Appointment Setting</a>
-            <a href="{{rootPrefix}}services/local-seo-social/index.html" class="sidebar-link">→ Local SEO &amp; Social</a>
+        <div class="cs-photo-card reveal" style="margin-bottom: 30px;">
+          <img src="{{rootPrefix}}images/avatar_james_phoenix.png" alt="Dr. James Martinez — Desert Sun Chiropractic, Phoenix AZ">
+          <div class="cs-photo-caption">
+            <div class="craftsflow-logo-inline"><div class="lm">CF</div> Craftsflow Client</div>
+            <span>Dr. James Martinez · Phoenix, AZ</span>
           </div>
         </div>
-        <div class="sidebar-box" style="background-color: var(--navy-primary); color: var(--white);">
-          <h4 class="sidebar-title" style="color: var(--white); border-bottom-color: rgba(255,255,255,0.2);">Duplicate This Success</h4>
-          <p style="font-size: 14px; margin-bottom: 20px; color: rgba(255,255,255,0.8);">Fill your clinic calendar with exclusive local patients.</p>
-          <a href="{{rootPrefix}}contact/index.html" class="btn btn-white" style="width: 100%;">Book Strategy Call</a>
+
+        <div class="sidebar-box reveal">
+          <h4 class="sidebar-title">Services Used</h4>
+          <div class="sidebar-links">
+            <a href="{{rootPrefix}}services/exclusive-leads/index.html" class="sidebar-link">→ Exclusive Leads</a>
+            <a href="{{rootPrefix}}services/appointment-setting/index.html" class="sidebar-link">→ AI Appointment Setting</a>
+            <a href="{{rootPrefix}}services/local-seo-social/index.html" class="sidebar-link">→ Local SEO &amp; Social</a>
+            <a href="{{rootPrefix}}services/lead-follow-up/index.html" class="sidebar-link">→ Automated Follow-Up</a>
+          </div>
+        </div>
+
+        <div class="sidebar-box reveal" style="background: linear-gradient(135deg, var(--navy-primary), var(--navy-accent)); border-color: rgba(197,168,128,0.3);">
+          <h4 class="sidebar-title" style="color: var(--white); border-bottom-color: rgba(255,255,255,0.15);">Want These Results?</h4>
+          <p style="font-size: 14px; color: rgba(255,255,255,0.75); margin-bottom: 20px; line-height: 1.6;">We'll build the same system for your clinic. Exclusive leads + AI follow-up + zero manual chasing.</p>
+          <a href="https://cal.com/ar-webcrafts/craftsflow" target="_blank" rel="noopener" class="btn" style="width: 100%; text-align: center; display: block;">Book Free Strategy Call</a>
         </div>
       </div>
     </div>

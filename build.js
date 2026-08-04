@@ -37,7 +37,8 @@ function parseMetadata(content) {
   const metadata = {
     title: 'Craftsflow | Premium Digital Growth',
     description: 'We grow real estate brands, builders, and businesses with exclusive leads, AI systems, world-class websites, and social media that converts.',
-    breadcrumbs: 'Home'
+    breadcrumbs: 'Home',
+    ogimage: 'https://craftsflow.com/images/vsl_thumbnail.png'
   };
 
   let pageContent = content;
@@ -171,6 +172,7 @@ function build() {
       .replace(/{{footer}}/g, footerTemplate)
       .replace(/{{breadcrumbs}}/g, breadcrumbsHTML)
       .replace(/{{body}}/g, pageContent)
+      .replace(/{{ogImage}}/g, metadata.ogimage || metadata['og:image'] || metadata.og_image || 'https://craftsflow.com/images/vsl_thumbnail.png')
       .replace(/{{canonical}}/g, `https://craftsflow.com/${cleanUrlPath}`);
 
     // Clean up templates variables inside the footer/header
