@@ -5,7 +5,7 @@ breadcrumbs: Home > Calculator
 -->
 <style>
   .calc-container-page {
-    max-width: 1000px;
+    max-width: 1040px;
     margin: 0 auto;
     padding: 0 16px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -43,6 +43,39 @@ breadcrumbs: Home > Calculator
     flex-shrink: 0;
   }
 
+  /* Service Mode Selector */
+  .service-mode-tabs {
+    display: flex;
+    background: #EAECEE;
+    border-radius: 10px;
+    padding: 4px;
+    margin-bottom: 24px;
+    gap: 4px;
+  }
+
+  .mode-tab-btn {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #4B5563;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .mode-tab-btn.active {
+    background: #FFFFFF;
+    color: #0F172A;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  }
+
   .calc-grid-layout {
     display: grid;
     grid-template-columns: 1fr 1.35fr;
@@ -58,15 +91,26 @@ breadcrumbs: Home > Calculator
 
   /* Inputs column */
   .calc-form-group {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
+  }
+
+  .calc-form-label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
   }
 
   .calc-form-label {
-    display: block;
     font-size: 12px;
     font-weight: 600;
     color: #4B5563;
-    margin-bottom: 8px;
+  }
+
+  .calc-range-val {
+    font-size: 13px;
+    font-weight: 700;
+    color: #0F172A;
   }
 
   .calc-input-field {
@@ -74,8 +118,8 @@ breadcrumbs: Home > Calculator
     background: #F9FAFB;
     border: 1px solid #E5E7EB;
     border-radius: 8px;
-    padding: 12px 16px;
-    font-size: 15px;
+    padding: 10px 14px;
+    font-size: 14px;
     font-weight: 600;
     color: #111827;
     outline: none;
@@ -87,6 +131,56 @@ breadcrumbs: Home > Calculator
     border-color: #0F172A;
     background: #FFFFFF;
     box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.08);
+  }
+
+  .calc-slider {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: #E2E8F0;
+    accent-color: #0F172A;
+    cursor: pointer;
+    margin-top: 6px;
+  }
+
+  /* Service Addon Checkboxes */
+  .addon-options-box {
+    background: #F1F5F9;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-top: 20px;
+  }
+
+  .addon-box-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .addon-check-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 8px;
+    cursor: pointer;
+  }
+
+  .addon-check-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .addon-check-item input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #0F172A;
+    cursor: pointer;
   }
 
   /* Results Grid */
@@ -137,11 +231,57 @@ breadcrumbs: Home > Calculator
     border-radius: 12px;
     padding: 24px 20px 16px 20px;
     margin-bottom: 24px;
+    position: relative;
   }
 
   .chart-svg-container {
     width: 100%;
-    height: 240px;
+    height: 250px;
+    cursor: crosshair;
+  }
+
+  /* Interactive Hover Tooltip Box matching input_file_0.png */
+  .chart-tooltip-card {
+    position: absolute;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 12px 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(-50%, -100%);
+    transition: opacity 0.15s ease, transform 0.15s ease;
+    z-index: 10;
+    min-width: 180px;
+  }
+
+  .chart-tooltip-card.visible {
+    opacity: 1;
+  }
+
+  .tooltip-month-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 8px;
+  }
+
+  .tooltip-line {
+    font-size: 12px;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .tooltip-line.curr {
+    color: #94A3B8;
+  }
+
+  .tooltip-line.impr {
+    color: #0F172A;
+    font-weight: 700;
   }
 
   .chart-legend-strip {
@@ -196,7 +336,7 @@ breadcrumbs: Home > Calculator
       Interactive Revenue &amp; Growth Forecast
     </h1>
     <p class="hero-subhead" style="margin: 0 auto; color: #CBD5E1;">
-      Calculate your team's current performance metrics vs. potential revenue gains with Craftsflow's AI platform.
+      Calculate your team's current performance metrics vs. potential revenue gains with Craftsflow's AI platform &amp; services.
     </p>
   </div>
 </section>
@@ -206,6 +346,17 @@ breadcrumbs: Home > Calculator
     
     <!-- CARD 1: TOP METRICS & OPPORTUNITY -->
     <div class="calc-card-outer">
+
+      <!-- Service Mode Selector: Without Ads vs With Paid Ads -->
+      <div class="service-mode-tabs">
+        <button class="mode-tab-btn active" id="mode-no-ads" onclick="switchServiceMode('no-ads')">
+          <span>⚡ Recovery &amp; AI System (Without Paid Ads)</span>
+        </button>
+        <button class="mode-tab-btn" id="mode-with-ads" onclick="switchServiceMode('with-ads')">
+          <span>🚀 Full Growth Pipeline (With Paid Ads)</span>
+        </button>
+      </div>
+
       <div class="calc-grid-layout">
         
         <!-- LEFT: INPUTS -->
@@ -218,29 +369,86 @@ breadcrumbs: Home > Calculator
           </div>
 
           <div class="calc-form-group">
-            <label class="calc-form-label" for="inp-agents">Call Center Agents</label>
-            <input type="number" class="calc-input-field" id="inp-agents" value="1" min="1" max="100" oninput="recalculateMetrics()">
+            <div class="calc-form-label-row">
+              <label class="calc-form-label" for="inp-agents">Call Center Agents / CSRs</label>
+              <span class="calc-range-val" id="val-agents">1</span>
+            </div>
+            <input type="number" class="calc-input-field" id="inp-agents" value="1" min="1" max="100" oninput="syncInputs('agents')">
           </div>
 
           <div class="calc-form-group">
-            <label class="calc-form-label" for="inp-rate-curr">Current Booking Rate (%)</label>
-            <input type="number" class="calc-input-field" id="inp-rate-curr" value="70" min="1" max="99" oninput="recalculateMetrics()">
+            <div class="calc-form-label-row">
+              <label class="calc-form-label" for="inp-rate-curr">Current Booking Rate (%)</label>
+              <span class="calc-range-val" id="val-rate-curr">70%</span>
+            </div>
+            <input type="range" class="calc-slider" id="slide-rate-curr" min="10" max="95" value="70" oninput="syncSliders('rate-curr')">
+            <input type="number" class="calc-input-field" id="inp-rate-curr" value="70" min="1" max="99" style="margin-top:6px;" oninput="syncInputs('rate-curr')">
           </div>
 
           <div class="calc-form-group">
-            <label class="calc-form-label" for="inp-rate-target">Target Booking Rate (%)</label>
-            <input type="number" class="calc-input-field" id="inp-rate-target" value="80" min="1" max="100" oninput="recalculateMetrics()">
+            <div class="calc-form-label-row">
+              <label class="calc-form-label" for="inp-rate-target">Target Booking Rate (%)</label>
+              <span class="calc-range-val" id="val-rate-target">80%</span>
+            </div>
+            <input type="range" class="calc-slider" id="slide-rate-target" min="20" max="99" value="80" oninput="syncSliders('rate-target')">
+            <input type="number" class="calc-input-field" id="inp-rate-target" value="80" min="1" max="100" style="margin-top:6px;" oninput="syncInputs('rate-target')">
           </div>
 
           <div class="calc-form-group">
-            <label class="calc-form-label" for="inp-ticket">Average Ticket Size ($)</label>
-            <input type="number" class="calc-input-field" id="inp-ticket" value="1000" min="10" step="50" oninput="recalculateMetrics()">
+            <div class="calc-form-label-row">
+              <label class="calc-form-label" for="inp-ticket">Average Ticket Size ($)</label>
+              <span class="calc-range-val" id="val-ticket">$1,000</span>
+            </div>
+            <input type="range" class="calc-slider" id="slide-ticket" min="200" max="10000" step="100" value="1000" oninput="syncSliders('ticket')">
+            <input type="number" class="calc-input-field" id="inp-ticket" value="1000" min="10" step="50" style="margin-top:6px;" oninput="syncInputs('ticket')">
           </div>
 
           <div class="calc-form-group">
-            <label class="calc-form-label" for="inp-calls-day"># of Qualified Calls / Day / CSR</label>
-            <input type="number" class="calc-input-field" id="inp-calls-day" value="1" min="0.1" step="0.5" oninput="recalculateMetrics()">
+            <div class="calc-form-label-row">
+              <label class="calc-form-label" for="inp-calls-day"># of Qualified Calls / Day / CSR</label>
+              <span class="calc-range-val" id="val-calls-day">1</span>
+            </div>
+            <input type="number" class="calc-input-field" id="inp-calls-day" value="1" min="0.1" step="0.5" oninput="syncInputs('calls-day')">
           </div>
+
+          <!-- Paid Ads Specific Inputs (Shown when With Paid Ads mode is active) -->
+          <div id="ads-input-group" style="display: none; border-top: 1px dashed #CBD5E1; padding-top: 16px; margin-top: 16px;">
+            <div class="calc-form-group">
+              <div class="calc-form-label-row">
+                <label class="calc-form-label" for="inp-ad-spend">Monthly Ad Spend ($)</label>
+                <span class="calc-range-val" id="val-ad-spend">$1,500</span>
+              </div>
+              <input type="range" class="calc-slider" id="slide-ad-spend" min="500" max="15000" step="250" value="1500" oninput="syncSliders('ad-spend')">
+              <input type="number" class="calc-input-field" id="inp-ad-spend" value="1500" min="250" step="100" style="margin-top:6px;" oninput="syncInputs('ad-spend')">
+            </div>
+
+            <div class="calc-form-group">
+              <div class="calc-form-label-row">
+                <label class="calc-form-label" for="inp-cpl">Cost Per Lead ($)</label>
+                <span class="calc-range-val" id="val-cpl">$40</span>
+              </div>
+              <input type="range" class="calc-slider" id="slide-cpl" min="15" max="150" step="5" value="40" oninput="syncSliders('cpl')">
+              <input type="number" class="calc-input-field" id="inp-cpl" value="40" min="5" step="5" style="margin-top:6px;" oninput="syncInputs('cpl')">
+            </div>
+          </div>
+
+          <!-- Service Addon Checkboxes -->
+          <div class="addon-options-box">
+            <div class="addon-box-title">Craftsflow Features Enabled</div>
+            <label class="addon-check-item">
+              <input type="checkbox" id="chk-missed-call" checked onchange="recalculateMetrics()">
+              <span>60-Sec Missed Call Recovery (+5% Target Rate)</span>
+            </label>
+            <label class="addon-check-item">
+              <input type="checkbox" id="chk-ai-answer" checked onchange="recalculateMetrics()">
+              <span>24/7 AI After-Hours Booking (+5% Target Rate)</span>
+            </label>
+            <label class="addon-check-item">
+              <input type="checkbox" id="chk-database" checked onchange="recalculateMetrics()">
+              <span>Past Customer Database Reactivation (+2 Bonus Deals/mo)</span>
+            </label>
+          </div>
+
         </div>
 
         <!-- RIGHT: REVENUE OPPORTUNITY -->
@@ -283,7 +491,7 @@ breadcrumbs: Home > Calculator
       </div>
     </div>
 
-    <!-- CARD 2: 12-MONTH FORECAST CHART -->
+    <!-- CARD 2: 12-MONTH FORECAST CHART WITH INTERACTIVE HOVER TOOLTIP -->
     <div class="calc-card-outer">
       <div class="calc-header-title" style="margin-bottom: 12px;">
         <div class="calc-icon-badge">
@@ -293,9 +501,22 @@ breadcrumbs: Home > Calculator
       </div>
       <p class="forecast-subtitle">Cumulative revenue comparison: See how the gap grows over time between current and improved performance.</p>
 
-      <div class="chart-wrapper-box">
-        <svg class="chart-svg-container" id="forecast-chart-svg" viewBox="0 0 700 220" preserveAspectRatio="none">
-          <!-- Grid lines, axes, and paths will be dynamically updated by JS -->
+      <div class="chart-wrapper-box" id="chart-wrapper">
+        <!-- Floating Tooltip Card matching input_file_0.png -->
+        <div class="chart-tooltip-card" id="chart-tooltip">
+          <div class="tooltip-month-title" id="tooltip-month">Jun</div>
+          <div class="tooltip-line curr">
+            <span>Current Trajectory :</span>
+            <strong id="tooltip-curr">$84,000</strong>
+          </div>
+          <div class="tooltip-line impr">
+            <span>With Craftsflow :</span>
+            <strong id="tooltip-impr">$96,000</strong>
+          </div>
+        </div>
+
+        <svg class="chart-svg-container" id="forecast-chart-svg" viewBox="0 0 700 240" preserveAspectRatio="none">
+          <!-- SVG elements updated dynamically -->
         </svg>
 
         <div class="chart-legend-strip">
@@ -319,33 +540,98 @@ breadcrumbs: Home > Calculator
 </section>
 
 <script>
+  let currentMode = 'no-ads';
+  let chartDataStore = { months: [], currCumul: [], imprCumul: [], xCoords: [] };
+
+  function switchServiceMode(mode) {
+    currentMode = mode;
+    document.getElementById('mode-no-ads').classList.toggle('active', mode === 'no-ads');
+    document.getElementById('mode-with-ads').classList.toggle('active', mode === 'with-ads');
+    document.getElementById('ads-input-group').style.display = mode === 'with-ads' ? 'block' : 'none';
+    recalculateMetrics();
+  }
+
+  function syncSliders(key) {
+    const slide = document.getElementById('slide-' + key);
+    const inp = document.getElementById('inp-' + key);
+    if (slide && inp) {
+      inp.value = slide.value;
+      recalculateMetrics();
+    }
+  }
+
+  function syncInputs(key) {
+    const slide = document.getElementById('slide-' + key);
+    const inp = document.getElementById('inp-' + key);
+    if (slide && inp) {
+      slide.value = inp.value;
+    }
+    recalculateMetrics();
+  }
+
   function recalculateMetrics() {
-    // Read input values
+    // Read base inputs
     const agents = Math.max(1, parseFloat(document.getElementById('inp-agents').value) || 1);
-    const rateCurr = Math.max(0, Math.min(100, parseFloat(document.getElementById('inp-rate-curr').value) || 0));
-    const rateTarget = Math.max(0, Math.min(100, parseFloat(document.getElementById('inp-rate-target').value) || 0));
+    let rateCurr = Math.max(0, Math.min(100, parseFloat(document.getElementById('inp-rate-curr').value) || 0));
+    let rateTarget = Math.max(0, Math.min(100, parseFloat(document.getElementById('inp-rate-target').value) || 0));
     const ticket = Math.max(0, parseFloat(document.getElementById('inp-ticket').value) || 0);
     const callsDay = Math.max(0, parseFloat(document.getElementById('inp-calls-day').value) || 0);
 
-    // Working days per month = 20
-    const monthlyCalls = agents * callsDay * 20;
+    // Apply Service Add-on boosts
+    const chkMissed = document.getElementById('chk-missed-call').checked;
+    const chkAI = document.getElementById('chk-ai-answer').checked;
+    const chkDB = document.getElementById('chk-database').checked;
 
-    // Monthly deals
-    const currDeals = monthlyCalls * (rateCurr / 100);
-    const imprDeals = monthlyCalls * (rateTarget / 100);
+    let targetBoost = 0;
+    if (chkMissed) targetBoost += 5;
+    if (chkAI) targetBoost += 5;
+
+    const effectiveTargetRate = Math.min(99, rateTarget + targetBoost);
+
+    // Update label text displays
+    document.getElementById('val-agents').textContent = agents;
+    document.getElementById('val-rate-curr').textContent = rateCurr + '%';
+    document.getElementById('val-rate-target').textContent = effectiveTargetRate + '%';
+    document.getElementById('val-ticket').textContent = '$' + Math.round(ticket).toLocaleString('en-US');
+    document.getElementById('val-calls-day').textContent = callsDay;
+
+    // Organic Monthly Calls
+    let monthlyCalls = agents * callsDay * 20;
+
+    // Paid Ads Calculation (if With Paid Ads mode)
+    let adNewDeals = 0;
+    let adSpend = 0;
+    let cpl = 40;
+
+    if (currentMode === 'with-ads') {
+      adSpend = parseFloat(document.getElementById('inp-ad-spend').value) || 0;
+      cpl = Math.max(1, parseFloat(document.getElementById('inp-cpl').value) || 40);
+      document.getElementById('val-ad-spend').textContent = '$' + Math.round(adSpend).toLocaleString('en-US');
+      document.getElementById('val-cpl').textContent = '$' + Math.round(cpl).toLocaleString('en-US');
+
+      const adLeads = adSpend / cpl;
+      monthlyCalls += adLeads;
+    }
+
+    // Database Reactivation Bonus Deals
+    const bonusDbDeals = chkDB ? 2 : 0;
+
+    // Deals calculation
+    const currDeals = (agents * callsDay * 20) * (rateCurr / 100);
+    const imprDeals = (monthlyCalls * (effectiveTargetRate / 100)) + bonusDbDeals;
     const addDeals = imprDeals - currDeals;
 
-    // Monthly revenues
+    // Revenue calculation
     const currRev = currDeals * ticket;
-    const imprRev = imprDeals * ticket;
-    const addMonthlyRev = imprRev - currRev;
+    const imprRev = (imprDeals * ticket) - (currentMode === 'with-ads' ? adSpend : 0);
+    const addMonthlyRev = Math.max(0, imprRev - currRev);
     const addYearlyRev = addMonthlyRev * 12;
 
-    // Format helpers
+    // Formatter
     const fmtCurr = (num) => '$' + Math.round(num).toLocaleString('en-US');
     const fmtDeals = (num) => (num >= 0 ? '+' : '') + num.toFixed(1) + ' deals';
 
-    // Update DOM metrics
+    // Update DOM Metrics
     document.getElementById('res-curr-rev').textContent = fmtCurr(currRev);
     document.getElementById('res-impr-rev').textContent = fmtCurr(imprRev);
     document.getElementById('res-add-monthly').textContent = fmtCurr(addMonthlyRev);
@@ -354,7 +640,7 @@ breadcrumbs: Home > Calculator
 
     document.getElementById('callout-title').textContent = 'Revenue Gap by Year End: ' + fmtCurr(addYearlyRev);
 
-    // Render Chart
+    // Render 12-Month SVG Chart
     renderChart(currRev, imprRev);
   }
 
@@ -362,7 +648,7 @@ breadcrumbs: Home > Calculator
     const svg = document.getElementById('forecast-chart-svg');
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     
-    // Calculate cumulative values
+    // Cumulative values
     const currCumul = [];
     const imprCumul = [];
     for (let i = 1; i <= 12; i++) {
@@ -373,16 +659,15 @@ breadcrumbs: Home > Calculator
     const maxVal = Math.max(imprCumul[11], 1000);
     
     // Dimensions
-    const paddingLeft = 50;
-    const paddingRight = 20;
-    const paddingTop = 20;
-    const paddingBottom = 30;
+    const paddingLeft = 55;
+    const paddingRight = 25;
+    const paddingTop = 25;
+    const paddingBottom = 35;
     const width = 700;
-    const height = 220;
+    const height = 240;
     const graphWidth = width - paddingLeft - paddingRight;
     const graphHeight = height - paddingTop - paddingBottom;
 
-    // Y scale ticks (3 ticks: 0, maxVal/2, maxVal)
     const fmtYLabel = (val) => {
       if (val >= 1000000) return '$' + (val / 1000000).toFixed(1) + 'M';
       if (val >= 1000) return '$' + Math.round(val / 1000) + 'K';
@@ -390,17 +675,19 @@ breadcrumbs: Home > Calculator
     };
 
     const y0 = height - paddingBottom;
-    const yMid = height - paddingBottom - (graphHeight / 2);
-    const yTop = paddingTop;
 
-    // Compute point coordinates
+    // X and Y converters
     const getX = (index) => paddingLeft + (index * (graphWidth / 11));
     const getY = (value) => y0 - ((value / maxVal) * graphHeight);
+
+    // Store points for hover interaction
+    const xCoords = months.map((_, idx) => getX(idx));
+    chartDataStore = { months, currCumul, imprCumul, xCoords, getY, paddingLeft, paddingRight, graphWidth };
 
     let html = '';
 
     // Draw background grid lines (horizontal)
-    const gridYValues = [0, maxVal / 2, maxVal];
+    const gridYValues = [0, maxVal * 0.25, maxVal * 0.5, maxVal * 0.75, maxVal];
     gridYValues.forEach(val => {
       const yPos = getY(val);
       html += `<line x1="${paddingLeft}" y1="${yPos}" x2="${width - paddingRight}" y2="${yPos}" stroke="#E2E8F0" stroke-dasharray="3 3" stroke-width="1"/>`;
@@ -410,7 +697,7 @@ breadcrumbs: Home > Calculator
     // Draw month labels on X axis
     months.forEach((month, idx) => {
       const xPos = getX(idx);
-      html += `<text x="${xPos}" y="${height - 8}" fill="#64748B" font-size="11" text-anchor="middle" font-weight="600">${month}</text>`;
+      html += `<text x="${xPos}" y="${height - 10}" fill="#64748B" font-size="11" text-anchor="middle" font-weight="600">${month}</text>`;
     });
 
     // Build SVG path strings
@@ -444,11 +731,95 @@ breadcrumbs: Home > Calculator
       html += `<circle cx="${x}" cy="${yImpr}" r="4.5" fill="#0F172A"/>`;
     });
 
+    // Vertical Guideline placeholder
+    html += `<line id="hover-guide-line" x1="0" y1="${paddingTop}" x2="0" y2="${y0}" stroke="#0F172A" stroke-dasharray="3 3" stroke-width="1.5" opacity="0"/>`;
+    html += `<circle id="hover-curr-dot" cx="0" cy="0" r="5" fill="#94A3B8" stroke="#FFFFFF" stroke-width="2" opacity="0"/>`;
+    html += `<circle id="hover-impr-dot" cx="0" cy="0" r="6" fill="#0F172A" stroke="#FFFFFF" stroke-width="2" opacity="0"/>`;
+
     svg.innerHTML = html;
   }
 
-  // Initial calculation on page load
+  // INTERACTIVE HOVER TOOLTIP LOGIC MATCHING input_file_0.png
   document.addEventListener('DOMContentLoaded', function() {
     recalculateMetrics();
+
+    const chartWrapper = document.getElementById('chart-wrapper');
+    const svg = document.getElementById('forecast-chart-svg');
+    const tooltip = document.getElementById('chart-tooltip');
+
+    svg.addEventListener('mousemove', function(e) {
+      const rect = svg.getBoundingClientRect();
+      const mouseX = e.clientX - rect.left;
+      const svgWidth = rect.width;
+      
+      // Map mouse position to SVG viewBox coordinates (700px width)
+      const scaleX = 700 / svgWidth;
+      const viewBoxX = mouseX * scaleX;
+
+      if (!chartDataStore.xCoords || chartDataStore.xCoords.length === 0) return;
+
+      // Find nearest month index
+      let nearestIdx = 0;
+      let minDiff = Math.abs(viewBoxX - chartDataStore.xCoords[0]);
+      for (let i = 1; i < chartDataStore.xCoords.length; i++) {
+        const diff = Math.abs(viewBoxX - chartDataStore.xCoords[i]);
+        if (diff < minDiff) {
+          minDiff = diff;
+          nearestIdx = i;
+        }
+      }
+
+      const posX = chartDataStore.xCoords[nearestIdx];
+      const monthName = chartDataStore.months[nearestIdx];
+      const valCurr = chartDataStore.currCumul[nearestIdx];
+      const valImpr = chartDataStore.imprCumul[nearestIdx];
+      const yCurr = chartDataStore.getY(valCurr);
+      const yImpr = chartDataStore.getY(valImpr);
+
+      // Update hover SVG guide elements
+      const guideLine = document.getElementById('hover-guide-line');
+      const dotCurr = document.getElementById('hover-curr-dot');
+      const dotImpr = document.getElementById('hover-impr-dot');
+
+      if (guideLine && dotCurr && dotImpr) {
+        guideLine.setAttribute('x1', posX);
+        guideLine.setAttribute('x2', posX);
+        guideLine.setAttribute('opacity', '1');
+
+        dotCurr.setAttribute('cx', posX);
+        dotCurr.setAttribute('cy', yCurr);
+        dotCurr.setAttribute('opacity', '1');
+
+        dotImpr.setAttribute('cx', posX);
+        dotImpr.setAttribute('cy', yImpr);
+        dotImpr.setAttribute('opacity', '1');
+      }
+
+      // Update Tooltip Card Content (matching input_file_0.png)
+      const fmtCurr = (num) => '$' + Math.round(num).toLocaleString('en-US');
+      document.getElementById('tooltip-month').textContent = monthName;
+      document.getElementById('tooltip-curr').textContent = fmtCurr(valCurr);
+      document.getElementById('tooltip-impr').textContent = fmtCurr(valImpr);
+
+      // Position tooltip HTML card relative to wrapper
+      const pxPercentage = posX / 700;
+      const wrapperWidth = chartWrapper.clientWidth;
+      const tooltipX = pxPercentage * wrapperWidth;
+      const tooltipY = (yImpr / 240) * chartWrapper.clientHeight;
+
+      tooltip.style.left = tooltipX + 'px';
+      tooltip.style.top = Math.max(50, tooltipY - 10) + 'px';
+      tooltip.classList.add('visible');
+    });
+
+    chartWrapper.addEventListener('mouseleave', function() {
+      tooltip.classList.remove('visible');
+      const guideLine = document.getElementById('hover-guide-line');
+      const dotCurr = document.getElementById('hover-curr-dot');
+      const dotImpr = document.getElementById('hover-impr-dot');
+      if (guideLine) guideLine.setAttribute('opacity', '0');
+      if (dotCurr) dotCurr.setAttribute('opacity', '0');
+      if (dotImpr) dotImpr.setAttribute('opacity', '0');
+    });
   });
 </script>
