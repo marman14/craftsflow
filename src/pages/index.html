@@ -935,14 +935,19 @@ breadcrumbs: Home
      ============================================= -->
 <section class="section" id="booking-section" style="background:var(--ink);">
   <div class="wrap">
-    <div class="booking-card reveal">
+    <div class="booking-card reveal" style="padding-bottom: 32px;">
       <div class="booking-icon">
         <svg width="36" height="36" fill="none" viewBox="0 0 24 24" stroke="#070B10" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
       </div>
       <h3>Book Your Free Discovery Call</h3>
-      <p>We'll show you the system live — either a missed call getting caught in real time, or what your custom revenue audit &amp; ad plan would look like. Completely free, no contracts, no pressure.</p>
-      <a class="btn big" href="https://calendly.com/craftsflow1/30min" target="_blank" rel="noopener">Book Your Free Discovery Call →</a>
-      <div class="booking-perks">
+      <p style="margin-bottom: 28px;">Pick a convenient time directly on our calendar below. Completely free, no contracts, no pressure.</p>
+
+      <!-- Calendly inline widget begin -->
+      <div class="calendly-inline-widget" data-url="https://calendly.com/craftsflow1/30min?background_color=070B10&text_color=ffffff&primary_color=ffd247" style="min-width:320px;height:700px;border-radius:16px;overflow:hidden;border:1px solid var(--line-2);"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      <!-- Calendly inline widget end -->
+
+      <div class="booking-perks" style="margin-top: 28px;">
         <span>
           <svg width="14" height="14" fill="none" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#34D399"/><path d="M5 8l2 2 4-4" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
           30 days free
@@ -956,7 +961,8 @@ breadcrumbs: Home
           No contracts
         </span>
       </div>
-      <p class="cal-load-hint">Not ready yet? <button onclick="window.location.href='#vsl-section'">Calculate your monthly leak first ↓</button></p>
+      <p class="cal-load-hint" style="margin-top: 16px;">Not ready yet? <button onclick="window.location.href='#hp-tab-leak'">Calculate your monthly leak first ↓</button></p>
     </div>
   </div>
 </section>
+
