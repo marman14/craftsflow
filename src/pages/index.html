@@ -68,25 +68,25 @@ breadcrumbs: Home
 </section>
 
 <!-- =============================================
-     INTERACTIVE REVENUE CALCULATOR (mini, inline)
+     INTERACTIVE REVENUE CALCULATOR (Assisted Living)
      ============================================= -->
 <section class="section" style="background: var(--ink-2); padding-top: 72px; padding-bottom: 72px;" id="vsl-section">
   <div class="wrap" style="max-width: 860px;">
 
     <!-- Section Heading -->
     <div class="section-head reveal" style="text-align: center; margin-bottom: 40px;">
-      <div class="kicker">Interactive Calculator</div>
-      <h2 style="font-size: clamp(28px, 4vw, 44px); line-height: 1.2;">How Much Revenue Are You<br>Bleeding Every Month?</h2>
-      <p style="color: var(--paper-dim); margin-top: 12px; font-size: 16px;">Slide your real numbers. Most owners are shocked when they see the total.</p>
+      <div class="kicker">ASSISTED LIVING &amp; SENIOR CARE CALCULATOR</div>
+      <h2 style="font-size: clamp(28px, 4vw, 44px); line-height: 1.2;">How Much Revenue Are Open Beds<br>&amp; Placement Fees Costing You?</h2>
+      <p style="color: var(--paper-dim); margin-top: 12px; font-size: 16px;">Slide your facility numbers. Most senior care operators are shocked when they see the annual total.</p>
     </div>
 
     <!-- Mode Tabs -->
     <div class="reveal hp-calc-tabs">
       <button id="hp-tab-leak" onclick="hpSwitchMode('leak')" class="hp-tab-btn active">
-        Revenue Leak Calculator
+        Empty Bed &amp; Agency Fee Leak
       </button>
       <button id="hp-tab-pipeline" onclick="hpSwitchMode('pipeline')" class="hp-tab-btn">
-        New Lead Pipeline ROI
+        Direct Referral Pipeline ROI
       </button>
     </div>
 
@@ -100,10 +100,10 @@ breadcrumbs: Home
           <!-- Slider 1 -->
           <div style="margin-bottom: 28px;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-              <label style="font-size: 14px; font-weight: 700; color: var(--paper);" id="hp-lbl-s1">Missed Calls Per Week</label>
-              <span style="font-size: 14px; font-weight: 800; color: var(--accent-gold); font-family: var(--font-mono);" id="hp-val-s1">12</span>
+              <label style="font-size: 14px; font-weight: 700; color: var(--paper);" id="hp-lbl-s1">Unfilled Beds / Open Rooms</label>
+              <span style="font-size: 14px; font-weight: 800; color: var(--accent-gold); font-family: var(--font-mono);" id="hp-val-s1">4 open beds</span>
             </div>
-            <input type="range" id="hp-slide-s1" min="2" max="80" step="1" value="12"
+            <input type="range" id="hp-slide-s1" min="1" max="20" step="1" value="4"
               style="width:100%; accent-color: var(--accent-gold); cursor: pointer; height: 6px;"
               oninput="hpCalc()">
           </div>
@@ -111,10 +111,10 @@ breadcrumbs: Home
           <!-- Slider 2 -->
           <div style="margin-bottom: 28px;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-              <label style="font-size: 14px; font-weight: 700; color: var(--paper);" id="hp-lbl-s2">Average Job / Customer Value ($)</label>
-              <span style="font-size: 14px; font-weight: 800; color: var(--accent-gold); font-family: var(--font-mono);" id="hp-val-s2">$1,500</span>
+              <label style="font-size: 14px; font-weight: 700; color: var(--paper);" id="hp-lbl-s2">Average Monthly Resident Rate ($)</label>
+              <span style="font-size: 14px; font-weight: 800; color: var(--accent-gold); font-family: var(--font-mono);" id="hp-val-s2">$4,500 / mo</span>
             </div>
-            <input type="range" id="hp-slide-s2" min="200" max="10000" step="100" value="1500"
+            <input type="range" id="hp-slide-s2" min="2500" max="10000" step="250" value="4500"
               style="width:100%; accent-color: var(--accent-gold); cursor: pointer; height: 6px;"
               oninput="hpCalc()">
           </div>
@@ -122,10 +122,10 @@ breadcrumbs: Home
           <!-- Slider 3 -->
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-              <label style="font-size: 14px; font-weight: 700; color: var(--paper);" id="hp-lbl-s3">Booking Rate if Answered</label>
-              <span style="font-size: 14px; font-weight: 800; color: var(--accent-gold); font-family: var(--font-mono);" id="hp-val-s3">30%</span>
+              <label style="font-size: 14px; font-weight: 700; color: var(--paper);" id="hp-lbl-s3">Placement Agency Fee Per Resident ($)</label>
+              <span style="font-size: 14px; font-weight: 800; color: var(--accent-gold); font-family: var(--font-mono);" id="hp-val-s3">$4,500 fee</span>
             </div>
-            <input type="range" id="hp-slide-s3" min="10" max="90" step="5" value="30"
+            <input type="range" id="hp-slide-s3" min="2000" max="8000" step="250" value="4500"
               style="width:100%; accent-color: var(--accent-gold); cursor: pointer; height: 6px;"
               oninput="hpCalc()">
           </div>
@@ -134,11 +134,11 @@ breadcrumbs: Home
 
         <!-- RIGHT: Result -->
         <div id="hp-calc-right" class="hp-calc-right">
-          <div style="font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 12px; font-family: var(--font-mono);" id="hp-result-label">Estimated Revenue Bleeding</div>
-          <div style="font-size: clamp(34px, 6vw, 56px); font-weight: 900; color: #FF5A5A; line-height: 1; letter-spacing: -0.03em; font-family: var(--font-headings);" id="hp-result-main">$23,382</div>
+          <div style="font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 12px; font-family: var(--font-mono);" id="hp-result-label">Estimated Revenue Bleed</div>
+          <div style="font-size: clamp(34px, 6vw, 56px); font-weight: 900; color: #FF5A5A; line-height: 1; letter-spacing: -0.03em; font-family: var(--font-headings);" id="hp-result-main">$19,500</div>
           <div style="font-size: 13px; color: var(--muted); margin-top: 8px; margin-bottom: 20px;">lost every month</div>
           <div style="font-size: 13px; color: var(--paper-dim); margin-bottom: 28px;">
-            Annual Loss: <strong style="color: #FF5A5A; font-family: var(--font-mono);" id="hp-result-annual">$280,584/yr</strong>
+            Annual Loss: <strong style="color: #FF5A5A; font-family: var(--font-mono);" id="hp-result-annual">$234,000/yr</strong>
           </div>
           <a href="https://calendly.com/craftsflow1/30min" target="_blank" rel="noopener" class="btn" style="width: 100%; text-align: center;">Get Referral Readiness Snapshot →</a>
         </div>
@@ -229,8 +229,10 @@ breadcrumbs: Home
     var tabLeak = document.getElementById('hp-tab-leak');
     var tabPipeline = document.getElementById('hp-tab-pipeline');
     var lbl1 = document.getElementById('hp-lbl-s1');
+    var lbl2 = document.getElementById('hp-lbl-s2');
     var lbl3 = document.getElementById('hp-lbl-s3');
     var slide1 = document.getElementById('hp-slide-s1');
+    var slide2 = document.getElementById('hp-slide-s2');
     var slide3 = document.getElementById('hp-slide-s3');
     var resultLabel = document.getElementById('hp-result-label');
 
@@ -242,11 +244,16 @@ breadcrumbs: Home
       tabPipeline.style.color = 'var(--paper-dim)';
       tabPipeline.style.border = '1.5px solid var(--line-2)';
 
-      lbl1.textContent = 'Missed Calls Per Week';
-      slide1.min = 2; slide1.max = 80; slide1.step = 1; slide1.value = 12;
-      lbl3.textContent = 'Booking Rate if Answered';
-      slide3.min = 10; slide3.max = 90; slide3.step = 5; slide3.value = 30;
-      resultLabel.textContent = 'Estimated Revenue Bleeding';
+      lbl1.textContent = 'Unfilled Beds / Open Rooms';
+      slide1.min = 1; slide1.max = 20; slide1.step = 1; slide1.value = 4;
+
+      lbl2.textContent = 'Average Monthly Resident Rate ($)';
+      slide2.min = 2500; slide2.max = 10000; slide2.step = 250; slide2.value = 4500;
+
+      lbl3.textContent = 'Placement Agency Fee Per Resident ($)';
+      slide3.min = 2000; slide3.max = 8000; slide3.step = 250; slide3.value = 4500;
+
+      resultLabel.textContent = 'Estimated Revenue Bleed';
 
     } else {
       tabPipeline.style.background = 'var(--accent-gold)';
@@ -256,11 +263,16 @@ breadcrumbs: Home
       tabLeak.style.color = 'var(--paper-dim)';
       tabLeak.style.border = '1.5px solid var(--line-2)';
 
-      lbl1.textContent = 'Monthly Ad Spend ($)';
-      slide1.min = 500; slide1.max = 15000; slide1.step = 250; slide1.value = 1500;
-      lbl3.textContent = 'Lead-to-Customer Rate (%)';
-      slide3.min = 5; slide3.max = 60; slide3.step = 5; slide3.value = 25;
-      resultLabel.textContent = 'Estimated Monthly ROI';
+      lbl1.textContent = 'Monthly System Investment ($)';
+      slide1.min = 500; slide1.max = 5000; slide1.step = 250; slide1.value = 1500;
+
+      lbl2.textContent = 'Average Monthly Resident Rate ($)';
+      slide2.min = 2500; slide2.max = 10000; slide2.step = 250; slide2.value = 4500;
+
+      lbl3.textContent = 'New Direct Placements / Month';
+      slide3.min = 1; slide3.max = 10; slide3.step = 1; slide3.value = 2;
+
+      resultLabel.textContent = 'Estimated Net Monthly ROI';
     }
     hpCalc();
   }
@@ -275,24 +287,24 @@ breadcrumbs: Home
     var resultEl = document.getElementById('hp-result-main');
     var annualEl = document.getElementById('hp-result-annual');
     var v1lbl = document.getElementById('hp-val-s1');
+    var v2lbl = document.getElementById('hp-val-s2');
     var v3lbl = document.getElementById('hp-val-s3');
 
     var monthly = 0;
 
     if (hpMode === 'leak') {
-      v1lbl.textContent = s1 + ' calls/wk';
-      document.getElementById('hp-val-s2').textContent = fmt(s2);
-      v3lbl.textContent = s3 + '%';
-      var monthlyMissed = s1 * 4;
-      monthly = monthlyMissed * (s3 / 100) * s2;
+      v1lbl.textContent = s1 + (s1 === 1 ? ' open bed' : ' open beds');
+      v2lbl.textContent = fmt(s2) + ' / mo';
+      v3lbl.textContent = fmt(s3) + ' fee';
+      monthly = (s1 * s2) + ((s1 * s3) / 12);
       resultEl.style.color = '#FF5A5A';
     } else {
-      v1lbl.textContent = fmt(s1);
-      document.getElementById('hp-val-s2').textContent = fmt(s2);
-      v3lbl.textContent = s3 + '%';
-      var leadsFromAds = s1 / 40; // avg $40 CPL
-      var bookedJobs = leadsFromAds * (s3 / 100);
-      monthly = Math.max(0, (bookedJobs * s2) - s1);
+      v1lbl.textContent = fmt(s1) + ' / mo';
+      v2lbl.textContent = fmt(s2) + ' / mo';
+      v3lbl.textContent = s3 + (s3 === 1 ? ' placement/mo' : ' placements/mo');
+      var grossMonthly = s3 * s2;
+      var savedFees = (s3 * 4500) / 12;
+      monthly = Math.max(0, grossMonthly + savedFees - s1);
       resultEl.style.color = '#34D399';
     }
 
