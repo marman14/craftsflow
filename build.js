@@ -61,7 +61,7 @@ function parseMetadata(content) {
 }
 
 function generateBreadcrumbsHTML(breadcrumbsStr, rootPrefix) {
-  return '<div style="margin-top: 92px;"></div>';
+  return '<div style="margin-top: 76px;"></div>';
 }
 
 function build() {
