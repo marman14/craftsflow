@@ -67,23 +67,21 @@ breadcrumbs: Home
     </div>
 
     <!-- Mode Tabs -->
-    <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 32px;" class="reveal">
-      <button id="hp-tab-leak" onclick="hpSwitchMode('leak')"
-        style="padding: 11px 24px; border-radius: 8px; border: none; font-size: 14px; font-weight: 800; cursor: pointer; transition: all 0.2s; background: var(--accent-gold); color: var(--navy-dark); font-family: var(--font-body);">
+    <div class="reveal hp-calc-tabs">
+      <button id="hp-tab-leak" onclick="hpSwitchMode('leak')" class="hp-tab-btn active">
         Revenue Leak Calculator
       </button>
-      <button id="hp-tab-pipeline" onclick="hpSwitchMode('pipeline')"
-        style="padding: 11px 24px; border-radius: 8px; border: 1.5px solid var(--line-2); font-size: 14px; font-weight: 700; cursor: pointer; transition: all 0.2s; background: transparent; color: var(--paper-dim); font-family: var(--font-body);">
+      <button id="hp-tab-pipeline" onclick="hpSwitchMode('pipeline')" class="hp-tab-btn">
         New Lead Pipeline ROI
       </button>
     </div>
 
     <!-- Calculator Card -->
     <div class="reveal" style="background: var(--steel); border: 1px solid var(--line-2); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-md);">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0;">
+      <div id="hp-calc-grid" class="hp-calc-grid">
 
         <!-- LEFT: Sliders -->
-        <div style="padding: 36px 32px; border-right: 1px solid var(--line);">
+        <div id="hp-calc-left" class="hp-calc-left">
 
           <!-- Slider 1 -->
           <div style="margin-bottom: 28px;">
@@ -121,9 +119,9 @@ breadcrumbs: Home
         </div>
 
         <!-- RIGHT: Result -->
-        <div style="padding: 36px 32px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: #0A0F16;">
+        <div id="hp-calc-right" class="hp-calc-right">
           <div style="font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 12px; font-family: var(--font-mono);" id="hp-result-label">Estimated Revenue Bleeding</div>
-          <div style="font-size: clamp(38px, 5vw, 56px); font-weight: 900; color: #FF5A5A; line-height: 1; letter-spacing: -0.03em; font-family: var(--font-headings);" id="hp-result-main">$23,382</div>
+          <div style="font-size: clamp(34px, 6vw, 56px); font-weight: 900; color: #FF5A5A; line-height: 1; letter-spacing: -0.03em; font-family: var(--font-headings);" id="hp-result-main">$23,382</div>
           <div style="font-size: 13px; color: var(--muted); margin-top: 8px; margin-bottom: 20px;">lost every month</div>
           <div style="font-size: 13px; color: var(--paper-dim); margin-bottom: 28px;">
             Annual Loss: <strong style="color: #FF5A5A; font-family: var(--font-mono);" id="hp-result-annual">$280,584/yr</strong>
@@ -135,9 +133,75 @@ breadcrumbs: Home
     </div>
 
     <style>
-      @media (max-width: 640px) {
-        #hp-calc-grid { grid-template-columns: 1fr !important; }
-        #hp-calc-right { border-left: none !important; border-top: 1px solid var(--line); }
+      .hp-calc-tabs {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 32px;
+        flex-wrap: wrap;
+      }
+
+      .hp-tab-btn {
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 800;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-family: var(--font-body);
+      }
+
+      #hp-tab-leak.active {
+        background: var(--accent-gold);
+        color: var(--navy-dark);
+        border: none;
+      }
+
+      .hp-calc-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+      }
+
+      .hp-calc-left {
+        padding: 36px 32px;
+        border-right: 1px solid var(--line);
+      }
+
+      .hp-calc-right {
+        padding: 36px 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: #0A0F16;
+      }
+
+      @media (max-width: 768px) {
+        .hp-calc-tabs {
+          flex-direction: column;
+          width: 100%;
+        }
+
+        .hp-tab-btn {
+          width: 100%;
+          text-align: center;
+        }
+
+        .hp-calc-grid {
+          grid-template-columns: 1fr !important;
+        }
+
+        .hp-calc-left {
+          padding: 24px 18px !important;
+          border-right: none !important;
+          border-bottom: 1px solid var(--line) !important;
+        }
+
+        .hp-calc-right {
+          padding: 28px 18px !important;
+        }
       }
     </style>
   </div>
@@ -875,6 +939,118 @@ breadcrumbs: Home
     }, 100);
   })();
 </script>
+
+
+<!-- =============================================
+     MEET THE TEAM SECTION
+     ============================================= -->
+<section class="section" id="team-section" style="background: var(--ink-2); border-top: 1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head reveal" style="text-align: center; margin-bottom: 40px;">
+      <div class="kicker" style="letter-spacing: 0.15em; font-family: var(--font-mono); color: var(--accent-gold);">THE MINDS BEHIND CRAFTSFLOW</div>
+      <h2 style="font-size: clamp(28px, 4vw, 42px); font-weight: 900; margin-top: 8px;">Senior Engineers &amp; Growth Operators Who Deliver</h2>
+      <p class="lead" style="max-width: 620px; margin: 12px auto 0; color: var(--paper-dim); font-size: 16px;">
+        100% in-house senior execution. No bloated layers, no junior handoffs. You work directly with specialists building your revenue pipeline.
+      </p>
+    </div>
+
+    <div class="team-grid reveal">
+      <!-- Member 1: CEO -->
+      <div class="team-card">
+        <div class="team-avatar-wrap">
+          <img src="{{rootPrefix}}images/team/arman_ceo.jpeg" alt="Muhammad Arman - CEO">
+          <span class="team-badge">Leadership</span>
+        </div>
+        <div class="team-info">
+          <h3 class="team-name">Muhammad Arman</h3>
+          <div class="team-role">CEO &amp; Founder</div>
+          <p class="team-bio">Direct client strategy &amp; system architecture. Ensures every growth engine delivers measurable monthly ROI on time.</p>
+        </div>
+      </div>
+
+      <!-- Member 2: Lead Dev -->
+      <div class="team-card">
+        <div class="team-avatar-wrap">
+          <img src="{{rootPrefix}}images/team/talha_lead_dev.png" alt="M Talha - Lead Developer">
+          <span class="team-badge">Engineering</span>
+        </div>
+        <div class="team-info">
+          <h3 class="team-name">M Talha</h3>
+          <div class="team-role">Lead Developer</div>
+          <p class="team-bio">Leads complex web architecture, custom plugin systems, and backend automation performance.</p>
+        </div>
+      </div>
+
+      <!-- Member 3: Full Stack -->
+      <div class="team-card">
+        <div class="team-avatar-wrap">
+          <img src="{{rootPrefix}}images/team/ali_fullstack.jpeg" alt="M Ali - Senior Developer">
+          <span class="team-badge">Engineering</span>
+        </div>
+        <div class="team-info">
+          <h3 class="team-name">M Ali</h3>
+          <div class="team-role">Senior Full-Stack Developer</div>
+          <p class="team-bio">Specializes in high-speed frontend builds, API integrations, and conversion funnel development.</p>
+        </div>
+      </div>
+
+      <!-- Member 4: Amann -->
+      <div class="team-card">
+        <div class="team-avatar-wrap">
+          <img src="{{rootPrefix}}images/team/amann_closer.png" alt="Amann - Business Development / Closer">
+          <span class="team-badge">Growth</span>
+        </div>
+        <div class="team-info">
+          <h3 class="team-name">Amann</h3>
+          <div class="team-role">Business Development / Closer</div>
+          <p class="team-bio">Drives growth partnerships, structures ROI strategies, and ensures smooth client onboarding.</p>
+        </div>
+      </div>
+
+      <!-- Member 5: Ahtisham -->
+      <div class="team-card">
+        <div class="team-avatar-wrap">
+          <img src="{{rootPrefix}}images/team/ahtisham_sales.jpeg" alt="Ahtisham - Sales Representative Agent">
+          <span class="team-badge">Sales</span>
+        </div>
+        <div class="team-info">
+          <h3 class="team-name">Ahtisham</h3>
+          <div class="team-role">Sales Representative Agent</div>
+          <p class="team-bio">Manages client communications, active outreach campaigns, and rapid lead engagement.</p>
+        </div>
+      </div>
+
+      <!-- Member 6: Iqra -->
+      <div class="team-card">
+        <div class="team-avatar-wrap">
+          <img src="{{rootPrefix}}images/team/iqra_sdr.jpeg" alt="Iqra - SDR">
+          <span class="team-badge">Outreach</span>
+        </div>
+        <div class="team-info">
+          <h3 class="team-name">Iqra</h3>
+          <div class="team-role">Sales Development Representative (SDR)</div>
+          <p class="team-bio">Executes targeted B2B research and outreach campaigns to connect local businesses directly with decision-makers.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Team Group Callout Banner -->
+    <div class="team-group-box reveal" style="margin-top: 40px;">
+      <div class="team-group-img-wrap">
+        <img src="{{rootPrefix}}images/team/team_group.jpeg" alt="Craftsflow Engineering &amp; Operations Team">
+      </div>
+      <div class="team-group-caption">
+        <div>
+          <h4 style="font-family: var(--font-headings); font-size: 20px; color: var(--paper); margin-bottom: 4px;">Inside Craftsflow Engineering</h4>
+          <p style="font-size: 14px; color: var(--muted); margin: 0;">In-house senior execution backed by a 4-hour SLA guarantee.</p>
+        </div>
+        <div style="display: flex; gap: 16px;">
+          <a href="{{rootPrefix}}about/index.html#team-section" class="btn small">Read Our Full Story &amp; Team Details →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- =============================================
      FAQ

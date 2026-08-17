@@ -37,6 +37,7 @@ const expectedPages = [
   'pricing/index.html',
   'case-studies/index.html',
   'about/index.html',
+  'team/index.html',
   'faq/index.html',
   'contact/index.html',
   'invest/index.html',

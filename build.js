@@ -128,6 +128,7 @@ function build() {
       activePricing: '',
       activeCase: '',
       activeAbout: '',
+      activeTeam: '',
       activeFAQ: '',
       activeContact: ''
     };
@@ -146,6 +147,8 @@ function build() {
       activeStates.activeCase = 'active';
     } else if (relativePath.startsWith('about')) {
       activeStates.activeAbout = 'active';
+    } else if (relativePath.startsWith('team')) {
+      activeStates.activeTeam = 'active';
     } else if (relativePath.startsWith('faq')) {
       activeStates.activeFAQ = 'active';
     } else if (relativePath.startsWith('contact')) {
