@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;500;600&display=swap');
 
-:root {
+:root,
+[data-theme="dark"] {
   /* === DARK THEME BASE (matching arman.arwebcrafts.com) === */
   --ink: #070B10;              /* Deepest dark bg */
   --ink-2: #0E151D;            /* Slightly lighter dark bg */
@@ -26,7 +27,7 @@
   --line-2: rgba(255, 255, 255, 0.14);
   --border-color: rgba(255, 255, 255, 0.08);
 
-  /* === LEGACY ALIASES (for existing site pages) === */
+  /* === LEGACY ALIASES === */
   --navy-primary: #0E151D;
   --navy-dark: #070B10;
   --navy-accent: #141F2A;
@@ -50,6 +51,87 @@
 
   --radius-card: 16px;
   --radius-btn: 10px;
+}
+
+[data-theme="light"] {
+  /* === LIGHT THEME BASE === */
+  --ink: #F8FAFC;              /* Main page background */
+  --ink-2: #F1F5F9;            /* Section alt background */
+  --steel: #FFFFFF;            /* Card background */
+  --steel-2: #E2E8F0;          /* Card inner background */
+  --paper: #0F172A;            /* Primary heading/body text */
+  --paper-dim: #334155;        /* Secondary text */
+  --muted: #64748B;            /* Muted subtitle text */
+
+  /* === ACCENTS FOR LIGHT THEME === */
+  --accent-gold: #D97706;      /* Rich amber gold */
+  --accent-gold-2: #F59E0B;    /* Bright amber */
+  --accent-gold-glow: rgba(217, 119, 6, 0.15);
+  --accent-indigo: #4F46E5;
+  --accent-indigo-hover: #3730A3;
+  --ok: #059669;
+  --ok-dim: rgba(5, 150, 105, 0.1);
+  --loss: #DC2626;
+  --loss-dim: rgba(220, 38, 38, 0.1);
+
+  /* === LIGHT BORDERS === */
+  --line: rgba(15, 23, 42, 0.08);
+  --line-2: rgba(15, 23, 42, 0.14);
+  --border-color: rgba(15, 23, 42, 0.08);
+
+  /* === ALIASES FOR LIGHT THEME === */
+  --navy-primary: #FFFFFF;
+  --navy-dark: #F8FAFC;
+  --navy-accent: #F1F5F9;
+  --slate-dark: #F8FAFC;
+  --text-main: #0F172A;
+  --text-light: #64748B;
+  --white: #0F172A;
+  --real-white: #FFFFFF;
+  --accent-gold-hover: #B45309;
+
+  --shadow-sm: 0 4px 12px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 12px 36px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 20px 48px rgba(15, 23, 42, 0.1);
+  --shadow-xl: 0 32px 64px rgba(15, 23, 42, 0.12);
+}
+
+/* Global Theme Transition */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-wrap {
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+[data-theme="light"] .nav-wrap {
+  background: rgba(248, 250, 252, 0.92);
+}
+
+/* Theme Switcher Button */
+.theme-toggle-btn {
+  background: var(--steel-2);
+  border: 1px solid var(--line-2);
+  color: var(--paper);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.theme-toggle-btn:hover {
+  background: var(--accent-gold);
+  color: var(--ink);
+  border-color: var(--accent-gold);
+  transform: rotate(15deg) scale(1.05);
 }
 
 /* Base Styles */

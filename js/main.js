@@ -5,6 +5,32 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ----------------------------------------------------------
+     0. LIGHT / DARK THEME TOGGLER
+  ---------------------------------------------------------- */
+  const themeToggleBtn  = document.getElementById('themeToggleBtn');
+  const themeToggleIcon = document.getElementById('themeToggleIcon');
+
+  function getActiveTheme() {
+    return document.documentElement.getAttribute('data-theme') || 'dark';
+  }
+
+  function updateThemeUI(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('craftsflow-theme', theme);
+    if (themeToggleIcon) {
+      themeToggleIcon.textContent = theme === 'light' ? '☀️' : '🌙';
+    }
+  }
+
+  if (themeToggleBtn) {
+    updateThemeUI(getActiveTheme());
+    themeToggleBtn.addEventListener('click', () => {
+      const newTheme = getActiveTheme() === 'dark' ? 'light' : 'dark';
+      updateThemeUI(newTheme);
+    });
+  }
+
+  /* ----------------------------------------------------------
      1. NAV SCROLL + SCROLL PROGRESS BAR
   ---------------------------------------------------------- */
   const navWrap   = document.querySelector('.nav-wrap');

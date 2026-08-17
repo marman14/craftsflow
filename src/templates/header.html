@@ -1,3 +1,11 @@
+<!-- Theme Init Script (Prevents FOUC) -->
+<script>
+  (function() {
+    var savedTheme = localStorage.getItem('craftsflow-theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  })();
+</script>
+
 <!-- Marquee Tape (top strip, like arman.arwebcrafts.com) -->
 <div class="tape-wrap" aria-hidden="true">
   <div class="tape-track">
@@ -22,8 +30,10 @@
   <div class="container">
     <nav>
       <div class="logo">
-        <div class="logo-mark">CF</div>
-        CRAFTS<span>FLOW</span>
+        <a href="{{rootPrefix}}index.html" style="display: inline-flex; align-items: center; gap: 9px; color: var(--paper);">
+          <div class="logo-mark">CF</div>
+          CRAFTS<span style="color: var(--accent-gold);">FLOW</span>
+        </a>
       </div>
 
       <div class="nav-links">
@@ -36,6 +46,9 @@
       </div>
 
       <div class="nav-cta">
+        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Light/Dark Theme" title="Toggle Light/Dark Theme">
+          <span id="themeToggleIcon">🌙</span>
+        </button>
         <a class="btn small" href="https://calendly.com/craftsflow1/30min" target="_blank" rel="noopener">Book Free Discovery Call</a>
         <button class="mobile-nav-toggle" aria-label="Toggle Menu">
           <span></span><span></span><span></span>
