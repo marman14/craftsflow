@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const themeToggleIcon = document.getElementById('themeToggleIcon');
 
   function getActiveTheme() {
-    return document.documentElement.getAttribute('data-theme') || 'dark';
+    return document.documentElement.getAttribute('data-theme') || localStorage.getItem('craftsflow-theme') || 'light';
   }
 
   function updateThemeUI(theme) {

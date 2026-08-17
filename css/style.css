@@ -1,60 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;500;600&display=swap');
 
 :root,
-[data-theme="dark"] {
-  /* === DARK THEME BASE (matching arman.arwebcrafts.com) === */
-  --ink: #070B10;              /* Deepest dark bg */
-  --ink-2: #0E151D;            /* Slightly lighter dark bg */
-  --steel: #141F2A;            /* Dark card bg */
-  --steel-2: #1A2835;          /* Slightly lighter card bg */
-  --paper: #F2F1EC;            /* Body text color */
-  --paper-dim: #C8D0D8;        /* Muted text */
-  --muted: #8FA3B5;            /* Even more muted */
-
-  /* === BRAND ACCENTS === */
-  --accent-gold: #FFC72C;      /* Safety yellow — exact match reference */
-  --accent-gold-2: #FFE066;    /* Lighter safety yellow */
-  --accent-gold-glow: rgba(255, 199, 44, 0.22);
-  --accent-indigo: #4F46E5;
-  --accent-indigo-hover: #3730A3;
-  --ok: #34D399;               /* Green OK */
-  --ok-dim: rgba(52, 211, 153, 0.12);
-  --loss: #FF5A5A;             /* Red loss */
-  --loss-dim: rgba(255, 90, 90, 0.12);
-
-  /* === BORDERS === */
-  --line: rgba(255, 255, 255, 0.08);
-  --line-2: rgba(255, 255, 255, 0.14);
-  --border-color: rgba(255, 255, 255, 0.08);
-
-  /* === LEGACY ALIASES === */
-  --navy-primary: #0E151D;
-  --navy-dark: #070B10;
-  --navy-accent: #141F2A;
-  --slate-dark: #070B10;
-  --text-main: #F2F1EC;
-  --text-light: #8FA3B5;
-  --white: #FFFFFF;
-  --real-white: #FFFFFF;
-  --accent-gold-hover: #E6B000;
-
-  /* === TYPOGRAPHY === */
-  --font-headings: 'Archivo Black', 'Plus Jakarta Sans', sans-serif;
-  --font-body: 'Archivo', 'Inter', sans-serif;
-  --font-mono: 'IBM Plex Mono', monospace;
-
-  /* === SHADOWS === */
-  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 12px 36px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 20px 48px rgba(255, 199, 44, 0.06);
-  --shadow-xl: 0 32px 64px rgba(0, 0, 0, 0.5);
-
-  --radius-card: 16px;
-  --radius-btn: 10px;
-}
-
 [data-theme="light"] {
-  /* === LIGHT THEME BASE === */
+  /* === LIGHT THEME BASE (DEFAULT) === */
   --ink: #F8FAFC;              /* Main page background */
   --ink-2: #F1F5F9;            /* Section alt background */
   --steel: #FFFFFF;            /* Card background */
@@ -90,10 +38,61 @@
   --real-white: #FFFFFF;
   --accent-gold-hover: #B45309;
 
+  /* === TYPOGRAPHY === */
+  --font-headings: 'Archivo Black', 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Archivo', 'Inter', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
   --shadow-sm: 0 4px 12px rgba(15, 23, 42, 0.06);
   --shadow-md: 0 12px 36px rgba(15, 23, 42, 0.08);
   --shadow-lg: 0 20px 48px rgba(15, 23, 42, 0.1);
   --shadow-xl: 0 32px 64px rgba(15, 23, 42, 0.12);
+
+  --radius-card: 16px;
+  --radius-btn: 10px;
+}
+
+[data-theme="dark"] {
+  /* === DARK THEME OVERRIDE === */
+  --ink: #070B10;              /* Deepest dark bg */
+  --ink-2: #0E151D;            /* Slightly lighter dark bg */
+  --steel: #141F2A;            /* Dark card bg */
+  --steel-2: #1A2835;          /* Slightly lighter card bg */
+  --paper: #F2F1EC;            /* Body text color */
+  --paper-dim: #C8D0D8;        /* Muted text */
+  --muted: #8FA3B5;            /* Even more muted */
+
+  /* === BRAND ACCENTS === */
+  --accent-gold: #FFC72C;      /* Safety yellow */
+  --accent-gold-2: #FFE066;    /* Lighter safety yellow */
+  --accent-gold-glow: rgba(255, 199, 44, 0.22);
+  --accent-indigo: #4F46E5;
+  --accent-indigo-hover: #3730A3;
+  --ok: #34D399;
+  --ok-dim: rgba(52, 211, 153, 0.12);
+  --loss: #FF5A5A;
+  --loss-dim: rgba(255, 90, 90, 0.12);
+
+  /* === BORDERS === */
+  --line: rgba(255, 255, 255, 0.08);
+  --line-2: rgba(255, 255, 255, 0.14);
+  --border-color: rgba(255, 255, 255, 0.08);
+
+  /* === ALIASES === */
+  --navy-primary: #0E151D;
+  --navy-dark: #070B10;
+  --navy-accent: #141F2A;
+  --slate-dark: #070B10;
+  --text-main: #F2F1EC;
+  --text-light: #8FA3B5;
+  --white: #FFFFFF;
+  --real-white: #FFFFFF;
+  --accent-gold-hover: #E6B000;
+
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 12px 36px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 20px 48px rgba(255, 199, 44, 0.06);
+  --shadow-xl: 0 32px 64px rgba(0, 0, 0, 0.5);
 }
 
 /* Global Theme Transition */
