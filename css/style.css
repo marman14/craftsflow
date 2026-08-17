@@ -564,9 +564,14 @@ nav {
   display: block;
   width: 22px;
   height: 2px;
-  background: var(--paper);
+  background: #FFFFFF !important;
   border-radius: 2px;
   transition: all 0.25s ease;
+}
+
+.mobile-nav-toggle:hover span,
+.mobile-nav-toggle.active span {
+  background: var(--accent-gold) !important;
 }
 
 /* Page offset for tape + nav */
