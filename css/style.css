@@ -1179,10 +1179,13 @@ blockquote {
 .reveal.reveal-d3 { transition-delay: 0.3s; }
 
 /* === Headline-toggle (persona switcher) === */
-/* Already defined above in funnel section, these are for the hero */
-
-
-
+/* Already defined above in funnel section, these are for /* Nav CTA Responsive Text Spans */
+.nav-cta-btn .mobile-text {
+  display: none;
+}
+.nav-cta-btn .desktop-text {
+  display: inline;
+}
 
 /* ============================================
    MOBILE RESPONSIVE (nav + hero)
@@ -1196,27 +1199,43 @@ blockquote {
     display: flex;
   }
 
+  .nav-cta {
+    gap: 10px;
+  }
+
+  .nav-cta-btn {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
   .nav-wrap.menu-open .nav-links {
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: 92px;
+    top: 64px;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(7, 11, 16, 0.97);
+    width: 100vw;
+    height: calc(100vh - 64px);
+    background: #0A0E14;
     backdrop-filter: blur(20px);
     align-items: center;
-    justify-content: center;
-    gap: 8px;
-    z-index: 900;
+    justify-content: flex-start;
+    padding-top: 48px;
+    gap: 12px;
+    z-index: 9999;
+    overflow-y: auto;
   }
 
   .nav-wrap.menu-open .nav-links a {
-    font-size: 20px;
-    padding: 16px 32px;
-    width: 100%;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 14px 28px;
+    width: 90%;
+    max-width: 320px;
     text-align: center;
+    border-radius: 10px;
   }
 
   .hero-ctas {
@@ -1243,16 +1262,49 @@ blockquote {
 }
 
 @media (max-width: 640px) {
-  .tape-wrap {
+  .nav-wrap {
+    top: 0;
+    height: 60px;
+  }
+
+  .nav-wrap .container,
+  .nav-wrap .wrap {
+    padding: 0 12px;
+  }
+
+  .logo {
+    font-size: 14px;
+    gap: 6px;
+  }
+
+  .logo-mark {
+    width: 26px;
+    height: 26px;
+    font-size: 11px;
+  }
+
+  .nav-cta {
+    gap: 6px;
+  }
+
+  .nav-cta-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 800;
+  }
+
+  .nav-cta-btn .desktop-text {
     display: none;
   }
 
-  .nav-wrap {
-    top: 0;
+  .nav-cta-btn .mobile-text {
+    display: inline;
   }
 
-  body {
-    padding-top: 60px;
+  .theme-toggle-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
   }
 
   .vsl-player {
@@ -1268,6 +1320,8 @@ blockquote {
 
   .stats-strip {
     grid-template-columns: 1fr 1fr;
+  }
+}s: 1fr 1fr;
   }
 
   .booking-card {
