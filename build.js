@@ -208,6 +208,11 @@ function build() {
     if (fs.existsSync(imgSrc)) {
       copyDirRecursive(imgSrc, imgDest);
     }
+    const downloadsSrc = path.join(__dirname, 'downloads');
+    const downloadsDest = path.join(OUTPUT_DIR, 'downloads');
+    if (fs.existsSync(downloadsSrc)) {
+      copyDirRecursive(downloadsSrc, downloadsDest);
+    }
     console.log('Copied static assets to public/');
   } catch (err) {
     console.error('Error copying static assets:', err);

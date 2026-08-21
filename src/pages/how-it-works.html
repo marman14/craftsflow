@@ -324,6 +324,62 @@ breadcrumbs: Home > How We Help
 
 
     <!-- =============================================
+         REFERRAL PIPELINE LEAD MAGNET CTA SECTION
+         ============================================= -->
+    <div style="background: linear-gradient(135deg, rgba(255, 199, 44, 0.08) 0%, rgba(18, 24, 38, 0.95) 100%); border: 1.5px solid rgba(255, 199, 44, 0.35); border-radius: 24px; padding: 48px 36px; margin-bottom: 48px; position: relative; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.4);" class="reveal">
+      <div style="position: absolute; top: -50px; right: -50px; width: 220px; height: 220px; background: radial-gradient(circle, rgba(255,199,44,0.18) 0%, rgba(0,0,0,0) 70%); pointer-events: none;"></div>
+      
+      <div style="display: grid; grid-template-columns: 1fr 340px; gap: 36px; align-items: center;" class="referral-cta-grid">
+        <div>
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+            <span style="background: var(--accent-gold); color: var(--navy-dark); font-family: var(--font-mono); font-weight: 900; font-size: 11px; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.08em;">FREE BLUEPRINT PDF</span>
+            <span style="color: var(--paper-dim); font-size: 13px; font-family: var(--font-mono);">Instant Download</span>
+          </div>
+          
+          <h2 style="font-size: clamp(26px, 3.5vw, 38px); font-weight: 900; margin-bottom: 16px; line-height: 1.2;">
+            How To Build Your Own <span style="color: var(--accent-gold);">Referral System</span> &amp; Pipeline
+          </h2>
+          
+          <p style="color: var(--paper-dim); font-size: 16px; line-height: 1.65; margin-bottom: 24px;">
+            Want to set up your own direct referral network? Get our complete step-by-step PDF blueprint revealing how to connect with discharge planners, case managers, and local referral partners — without paying placement agency fees.
+          </p>
+          
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 28px;">
+            <div style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--white);">
+              <span style="color: var(--accent-gold); font-size: 16px;">✓</span> Step-by-step pipeline blueprint
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--white);">
+              <span style="color: var(--accent-gold); font-size: 16px;">✓</span> Partner outreach scripts
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--white);">
+              <span style="color: var(--accent-gold); font-size: 16px;">✓</span> Missed-call recovery guide
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--white);">
+              <span style="color: var(--accent-gold); font-size: 16px;">✓</span> Direct relationship nurture system
+            </div>
+          </div>
+          
+          <button type="button" class="btn big" onclick="openReferralModal()" style="background: var(--accent-gold); color: var(--navy-dark); font-weight: 800; border: none; cursor: pointer;">
+            Get Free Referral Guide Now →
+          </button>
+        </div>
+        
+        <div style="background: var(--ink-2); border: 1px solid var(--line-2); border-radius: 20px; padding: 28px 24px; text-align: center; box-shadow: 0 12px 30px rgba(0,0,0,0.5);">
+          <div style="font-size: 56px; margin-bottom: 12px; filter: drop-shadow(0 4px 12px rgba(255,199,44,0.3));">📄</div>
+          <h3 style="font-size: 18px; font-weight: 800; color: var(--white); margin-bottom: 8px;">Official Guide PDF</h3>
+          <p style="font-size: 13px; color: var(--paper-dim); margin-bottom: 20px; line-height: 1.5;">
+            "How-To-Build-Your-Own-Referral-System.pdf"<br>
+            <span style="font-family: var(--font-mono); color: var(--accent-gold);">Free 100% Downloadable Resource</span>
+          </p>
+          <button type="button" class="btn" onclick="openReferralModal()" style="width: 100%; justify-content: center; font-size: 14px;">
+            Claim Your Free Copy 📥
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- =============================================
          BOTTOM CTA BOX
          ============================================= -->
     <div style="background: var(--ink-2); border: 1.5px solid var(--line-2); border-radius: 24px; padding: 48px 32px; text-align: center;" class="reveal">
@@ -340,3 +396,80 @@ breadcrumbs: Home > How We Help
 
   </div>
 </section>
+
+<!-- =============================================
+     LEAD MAGNET MODAL FOR REFERRAL BLUEPRINT
+     ============================================= -->
+<div id="referral-modal" class="ref-modal-overlay" aria-hidden="true" role="dialog">
+  <div class="ref-modal-card">
+    <button type="button" class="ref-modal-close" onclick="closeReferralModal()" aria-label="Close modal">&times;</button>
+
+    <!-- FORM STATE -->
+    <div id="ref-modal-form-wrap">
+      <div style="text-align: center; margin-bottom: 24px;">
+        <span style="background: rgba(255, 199, 44, 0.15); color: var(--accent-gold); font-family: var(--font-mono); font-weight: 800; font-size: 11px; padding: 4px 12px; border-radius: 20px; border: 1px solid rgba(255, 199, 44, 0.3); text-transform: uppercase;">
+          FREE DOWNLOAD ACCESS
+        </span>
+        <h3 style="font-size: 24px; font-weight: 900; color: var(--white); margin-top: 12px; margin-bottom: 8px;">
+          How To Build Your Own Referral System
+        </h3>
+        <p style="font-size: 14px; color: var(--paper-dim); line-height: 1.5; margin: 0;">
+          Enter your information below to instantly download the PDF guide and receive a copy directly in your email.
+        </p>
+      </div>
+
+      <form id="referral-lead-form" onsubmit="handleReferralLeadSubmit(event)">
+        <div class="form-group" style="margin-bottom: 16px;">
+          <label for="ref-lead-name" style="display: block; font-size: 13px; font-weight: 700; color: var(--white); margin-bottom: 6px;">Full Name *</label>
+          <input type="text" id="ref-lead-name" required placeholder="e.g. Sarah Jenkins" class="ref-input">
+        </div>
+
+        <div class="form-group" style="margin-bottom: 16px;">
+          <label for="ref-lead-email" style="display: block; font-size: 13px; font-weight: 700; color: var(--white); margin-bottom: 6px;">Work Email Address *</label>
+          <input type="email" id="ref-lead-email" required placeholder="sarah@yourcompany.com" class="ref-input">
+          <small style="color: var(--paper-dim); font-size: 11px; display: block; margin-top: 4px;">Make sure to enter your correct email address so you receive the guide copy.</small>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 24px;">
+          <label for="ref-lead-phone" style="display: block; font-size: 13px; font-weight: 700; color: var(--white); margin-bottom: 6px;">Phone Number *</label>
+          <input type="tel" id="ref-lead-phone" required placeholder="(555) 000-0000" class="ref-input">
+        </div>
+
+        <button type="submit" id="ref-submit-btn" class="btn big" style="width: 100%; justify-content: center; background: var(--accent-gold); color: var(--navy-dark); font-weight: 900; border: none;">
+          Get It Free &amp; Download Guide PDF →
+        </button>
+
+        <p style="font-size: 12px; color: var(--paper-dim); text-align: center; margin-top: 14px; margin-bottom: 0;">
+          🔒 We respect your privacy. No spam ever.
+        </p>
+      </form>
+    </div>
+
+    <!-- SUCCESS STATE -->
+    <div id="ref-modal-success" style="display: none; text-align: center; padding: 12px 8px;">
+      <div style="width: 64px; height: 64px; background: rgba(52, 211, 153, 0.15); border: 2px solid #34D399; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; color: #34D399; font-size: 32px;">
+        ✓
+      </div>
+      <h3 style="font-size: 24px; font-weight: 900; color: var(--white); margin-bottom: 12px;">
+        Your Free Referral Blueprint Is Ready!
+      </h3>
+      <p style="font-size: 15px; color: var(--paper-dim); line-height: 1.6; margin-bottom: 20px;">
+        Your automatic download has started. We've also dispatched a copy directly to <strong id="ref-confirmed-email" style="color: var(--accent-gold);"></strong> so you can access it anytime.
+      </p>
+
+      <div style="background: var(--ink-2); border: 1px dashed var(--line-2); border-radius: 12px; padding: 16px; margin-bottom: 24px;">
+        <p style="font-size: 13px; color: var(--white); margin-bottom: 12px;">
+          Didn't start automatically? Click below to download directly:
+        </p>
+        <a id="ref-manual-download-btn" href="{{rootPrefix}}downloads/How-To-Build-Your-Own-Referral-System.pdf" download="How-To-Build-Your-Own-Referral-System.pdf" class="btn" style="width: 100%; justify-content: center;">
+          📥 Click Here To Re-Download PDF
+        </a>
+      </div>
+
+      <button type="button" class="btn" onclick="closeReferralModal()" style="background: transparent; border: 1px solid var(--line-2); color: var(--paper-dim); width: 100%; justify-content: center;">
+        Close Window
+      </button>
+    </div>
+  </div>
+</div>
+

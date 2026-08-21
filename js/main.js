@@ -385,3 +385,122 @@ function _pulseEl(id) {
   el.style.transform = 'scale(1.05)';
   setTimeout(() => { el.style.transform = 'scale(1)'; }, 150);
 }
+
+/* ----------------------------------------------------------
+   9. REFERRAL SYSTEM LEAD MAGNET MODAL FUNCTIONS
+---------------------------------------------------------- */
+function openReferralModal() {
+  const modal = document.getElementById('referral-modal');
+  if (!modal) return;
+  modal.classList.add('active');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeReferralModal() {
+  const modal = document.getElementById('referral-modal');
+  if (!modal) return;
+  modal.classList.remove('active');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+function handleReferralLeadSubmit(event) {
+  event.preventDefault();
+
+  const nameEl  = document.getElementById('ref-lead-name');
+  const emailEl = document.getElementById('ref-lead-email');
+  const phoneEl = document.getElementById('ref-lead-phone');
+  const submitBtn = document.getElementById('ref-submit-btn');
+
+  if (!nameEl || !emailEl || !phoneEl) return;
+
+  const name  = nameEl.value.trim();
+  const email = emailEl.value.trim();
+  const phone = phoneEl.value.trim();
+
+  if (!name || !email || !phone) {
+    alert('Please enter your name, email, and phone number.');
+    return;
+  }
+
+  // Email format validation
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    alert('Please enter a valid email address so we can deliver your guide.');
+    emailEl.focus();
+    return;
+  }
+
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = 'Processing &amp; Downloading...';
+  }
+
+  // 1. Save lead locally in localStorage
+  try {
+    const leadRecord = {
+      id: 'lead_' + Date.now(),
+      name: name,
+      email: email,
+      phone: phone,
+      resource: 'How-To-Build-Your-Own-Referral-System.pdf',
+      submittedAt: new Date().toISOString()
+    };
+    const existingLeads = JSON.parse(localStorage.getItem('craftsflow_leads') || '[]');
+    existingLeads.push(leadRecord);
+    localStorage.setItem('craftsflow_leads', JSON.stringify(existingLeads));
+    console.log('Saved lead into craftsflow_leads:', leadRecord);
+  } catch (err) {
+    console.warn('LocalStorage save warning:', err);
+  }
+
+  // 2. Webhook notification (Web3Forms/Email service)
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({
+      access_key: 'YOUR_ACCESS_KEY_OR_PUBLIC',
+      subject: `New Lead: ${name} requested Referral System Blueprint`,
+      from_name: 'Craftsflow Lead System',
+      name: name,
+      email: email,
+      phone: phone,
+      message: `Lead ${name} (${email}, ${phone}) downloaded "How To Build Your Own Referral System"`
+    })
+  }).catch(() => {});
+
+  // 3. Determine correct relative download link and trigger automatic PDF download
+  const isSubFolder = window.location.pathname.includes('/how-it-works') || window.location.pathname.includes('/pages/');
+  const downloadPath = isSubFolder ? '../downloads/How-To-Build-Your-Own-Referral-System.pdf' : '/downloads/How-To-Build-Your-Own-Referral-System.pdf';
+
+  const link = document.createElement('a');
+  link.href = downloadPath;
+  link.download = 'How-To-Build-Your-Own-Referral-System.pdf';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+
+  // 4. Show success screen inside modal
+  setTimeout(() => {
+    const formWrap = document.getElementById('ref-modal-form-wrap');
+    const successWrap = document.getElementById('ref-modal-success');
+    const confirmedEmail = document.getElementById('ref-confirmed-email');
+    const manualBtn = document.getElementById('ref-manual-download-btn');
+
+    if (confirmedEmail) confirmedEmail.textContent = email;
+    if (manualBtn) manualBtn.href = downloadPath;
+
+    if (formWrap) formWrap.style.display = 'none';
+    if (successWrap) successWrap.style.display = 'block';
+  }, 400);
+}
+
+// Close modal when clicking backdrop
+document.addEventListener('click', (e) => {
+  const modal = document.getElementById('referral-modal');
+  if (modal && e.target === modal) {
+    closeReferralModal();
+  }
+});
+

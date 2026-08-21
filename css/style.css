@@ -4536,3 +4536,97 @@ footer.site-footer {
     gap: 20px;
   }
 }
+
+/* ============================================================
+   REFERRAL SYSTEM LEAD MAGNET MODAL & CTA STYLES
+   ============================================================ */
+@media (max-width: 860px) {
+  .referral-cta-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+}
+
+.ref-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(6, 10, 18, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.ref-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.ref-modal-card {
+  background: #121826;
+  border: 1.5px solid rgba(255, 199, 44, 0.4);
+  border-radius: 24px;
+  padding: 40px 32px;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 30px rgba(255, 199, 44, 0.15);
+  transform: translateY(24px) scale(0.96);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+.ref-modal-overlay.active .ref-modal-card {
+  transform: translateY(0) scale(1);
+}
+
+.ref-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: var(--paper-dim, #94A3B8);
+  font-size: 32px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px 8px;
+  border-radius: 8px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.ref-modal-close:hover {
+  color: var(--white, #FFFFFF);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.ref-input {
+  width: 100%;
+  padding: 14px 18px;
+  background: #1A2234;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ref-input:focus {
+  border-color: var(--accent-gold, #FFC72C);
+  box-shadow: 0 0 0 3px rgba(255, 199, 44, 0.22);
+}
+
