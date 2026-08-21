@@ -108,3 +108,86 @@
     <path d="M16 2C8.268 2 2 8.268 2 16c0 2.82.83 5.447 2.26 7.647L2.5 29.5l6.037-1.725A13.93 13.93 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.5a11.43 11.43 0 01-5.836-1.59l-.419-.249-3.58.1.942-3.488-.273-.435A11.45 11.45 0 014.5 16C4.5 9.649 9.649 4.5 16 4.5S27.5 9.649 27.5 16 22.351 27.5 16 27.5zm6.273-8.56c-.344-.172-2.036-1.004-2.352-1.119-.315-.115-.545-.172-.774.172-.23.344-.889 1.119-1.09 1.348-.201.23-.402.258-.746.086a9.387 9.387 0 01-2.766-1.706 10.354 10.354 0 01-1.916-2.386c-.201-.344-.022-.53.15-.701.155-.155.344-.402.516-.603.172-.201.23-.344.344-.574.115-.23.057-.431-.029-.603-.086-.172-.774-1.865-1.061-2.554-.287-.67-.574-.574-.774-.588l-.66-.014c-.23 0-.603.086-.918.431-.315.344-1.205 1.177-1.205 2.871s1.234 3.33 1.406 3.56c.172.23 2.428 3.708 5.882 5.201.821.355 1.462.567 1.962.726.825.263 1.576.226 2.17.137.663-.099 2.036-.832 2.323-1.636.287-.804.287-1.493.201-1.636-.086-.143-.315-.23-.659-.402z" fill="#FFFFFF"/>
   </svg>
 </a>
+
+<!-- GLOBAL LEAD MAGNET MODAL FOR REFERRAL BLUEPRINT & SNAPSHOT -->
+<div id="referral-modal" class="ref-modal-overlay" aria-hidden="true" role="dialog">
+  <div class="ref-modal-card">
+    <button type="button" class="ref-modal-close" onclick="closeReferralModal()" aria-label="Close modal">&times;</button>
+
+    <!-- FORM STATE -->
+    <div id="ref-modal-form-wrap">
+      <div style="text-align: center; margin-bottom: 24px;">
+        <span style="background: rgba(255, 199, 44, 0.15); color: var(--accent-gold); font-family: var(--font-mono); font-weight: 800; font-size: 11px; padding: 4px 12px; border-radius: 20px; border: 1px solid rgba(255, 199, 44, 0.3); text-transform: uppercase;">
+          FREE REFERRAL SNAPSHOT &amp; GUIDE
+        </span>
+        <h3 style="font-size: 24px; font-weight: 900; color: #FFFFFF; margin-top: 12px; margin-bottom: 8px;">
+          Get Your Free Referral Readiness Snapshot
+        </h3>
+        <p style="font-size: 14px; color: #94A3B8; line-height: 1.5; margin: 0;">
+          Enter your information below to instantly download the PDF blueprint and claim your referral snapshot.
+        </p>
+      </div>
+
+      <form id="referral-lead-form" onsubmit="handleReferralLeadSubmit(event)">
+        <div class="form-group" style="margin-bottom: 16px;">
+          <label for="ref-lead-name" style="display: block; font-size: 13px; font-weight: 700; color: #FFFFFF; margin-bottom: 6px;">Full Name *</label>
+          <input type="text" id="ref-lead-name" required placeholder="e.g. Sarah Jenkins" class="ref-input">
+        </div>
+
+        <div class="form-group" style="margin-bottom: 16px;">
+          <label for="ref-lead-email" style="display: block; font-size: 13px; font-weight: 700; color: #FFFFFF; margin-bottom: 6px;">Work Email Address *</label>
+          <input type="email" id="ref-lead-email" required placeholder="sarah@yourcompany.com" class="ref-input">
+          <small style="color: #94A3B8; font-size: 11px; display: block; margin-top: 4px;">Make sure to enter your correct email address so you receive the guide copy.</small>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 24px;">
+          <label for="ref-lead-phone" style="display: block; font-size: 13px; font-weight: 700; color: #FFFFFF; margin-bottom: 6px;">Phone Number *</label>
+          <input type="tel" id="ref-lead-phone" required placeholder="(555) 000-0000" class="ref-input">
+        </div>
+
+        <button type="submit" id="ref-submit-btn" class="btn big" style="width: 100%; justify-content: center; background: var(--accent-gold); color: #0F172A; font-weight: 900; border: none;">
+          Get It Free &amp; Download Blueprint PDF →
+        </button>
+
+        <p style="font-size: 12px; color: #94A3B8; text-align: center; margin-top: 14px; margin-bottom: 0;">
+          🔒 We respect your privacy. No spam ever.
+        </p>
+      </form>
+    </div>
+
+    <!-- SUCCESS STATE -->
+    <div id="ref-modal-success" style="display: none; text-align: center; padding: 12px 8px;">
+      <div style="width: 64px; height: 64px; background: rgba(52, 211, 153, 0.15); border: 2px solid #34D399; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; color: #34D399; font-size: 32px;">
+        ✓
+      </div>
+      <h3 style="font-size: 24px; font-weight: 900; color: #FFFFFF; margin-bottom: 12px;">
+        Your Free Referral Blueprint Is Ready!
+      </h3>
+      <p style="font-size: 15px; color: #94A3B8; line-height: 1.6; margin-bottom: 20px;">
+        Your automatic download has started. We've also dispatched a copy directly to <strong id="ref-confirmed-email" style="color: var(--accent-gold);"></strong> so you can access it anytime.
+      </p>
+
+      <div style="background: rgba(255, 199, 44, 0.08); border: 1.5px solid rgba(255, 199, 44, 0.3); border-radius: 16px; padding: 20px; margin-bottom: 20px; text-align: center;">
+        <h4 style="font-size: 16px; font-weight: 800; color: #FFFFFF; margin-bottom: 8px;">Want a 1-on-1 ZIP Code Strategy Session?</h4>
+        <p style="font-size: 13px; color: #CBD5E1; margin-bottom: 16px; line-height: 1.5;">Book a free 20-min live review with our growth team to map out your local competitor gaps.</p>
+        <a href="https://calendly.com/craftsflow1/30min" target="_blank" rel="noopener" class="btn big" style="width: 100%; justify-content: center; background: var(--accent-gold); color: #0F172A; font-weight: 900; text-decoration: none;">
+          Book Free Strategy Session on Calendly →
+        </a>
+      </div>
+
+      <div style="background: #1A2234; border: 1px dashed rgba(255,255,255,0.15); border-radius: 12px; padding: 14px; margin-bottom: 20px;">
+        <p style="font-size: 13px; color: #FFFFFF; margin-bottom: 8px;">
+          Didn't download automatically?
+        </p>
+        <a id="ref-manual-download-btn" href="{{rootPrefix}}downloads/How-To-Build-Your-Own-Referral-System.pdf" download="How-To-Build-Your-Own-Referral-System.pdf" class="btn" style="width: 100%; justify-content: center;">
+          📥 Click Here To Re-Download PDF
+        </a>
+      </div>
+
+      <button type="button" class="btn" onclick="closeReferralModal()" style="background: transparent; border: 1px solid rgba(255,255,255,0.2); color: #94A3B8; width: 100%; justify-content: center;">
+        Close Window
+      </button>
+    </div>
+  </div>
+</div>
+
